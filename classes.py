@@ -116,9 +116,3 @@ while totale_tijd < 120:
 
     # Verwijder de gebruikte verbinding
     verbindingen.remove(kortste_verbinding)
-
-# Print het resultaat
-print(f"Totale tijd: {totale_tijd} minuten")
-print("Gekozen verbindingen:")
-for v in gekozen_verbindingen:
-    print(f"{v.station1} -> {v.station2} ({v.tijd} min)")
