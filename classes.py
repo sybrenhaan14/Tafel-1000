@@ -38,7 +38,7 @@ class verbinding:
         self.tijd = tijd
         self.verbinding_id = verbinding_id
 
-verbindingen = {
+verbindingen = [
     verbinding("Alkmaar","Hoorn",24, 100)
     verbinding("Alkmaar", "Den Helder", 36, 101)
     verbinding("Amsterdam Amstel", "Amsterdam Zuid", 10, 102)
@@ -67,4 +67,4 @@ verbindingen = {
     verbinding("Zaandam", "Castricum", 12, 125)
     verbinding("Zaandam", "Beverwijk", 25, 126)
     verbinding("Zaandam", "Hoorn", 26, 127)
-}
+]
