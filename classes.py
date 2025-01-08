@@ -1,4 +1,4 @@
-class station():
+class Station():
     def __init__(self, naam, latitude, longitude):
         self.naam = naam
         self.latitude = latitude
@@ -30,46 +30,45 @@ stations = [
 ]
 
 
-class verbinding:
+class Verbinding:
 
-    def __init__(self, station1, station2, tijd, verbinding_id):
+    def __init__(self, station1, station2, tijd):
         self.station1 = station1
         self.station2 = station2
         self.tijd = tijd
-        self.verbinding_id = verbinding_id
 
 verbindingen = [
-    verbinding("Alkmaar","Hoorn",24, 100),
-    verbinding("Alkmaar", "Den Helder", 36, 101),
-    verbinding("Amsterdam Amstel", "Amsterdam Zuid", 10, 102),
-    verbinding("Amsterdam Amstel", "Amsterdam Centraal", 8, 103),
-    verbinding("Amsterdam Centraal", "Amsterdam Sloterdijk", 6, 104),
-    verbinding("Amsterdam Sloterdijk", "Haarlem", 11, 105),
-    verbinding("Amsterdam Sloterdijk", "Zaandam", 6, 106),
-    verbinding("Amsterdam Zuid","Amsterdam Sloterdijk", 16, 107),
-    verbinding("Amsterdam Zuid", "Schiphol Airport", 6, 108),
-    verbinding("Beverwijk", "Castricum", 13, 109),
-    verbinding("Castricum", "Alkmaar", 9, 110),
-    verbinding("Delft", "Den Haag Centraal", 13, 111),
-    verbinding("Den Haag Centraal", "Gouda", 18, 112),
-    verbinding("Den Haag Centraal", "Leiden Centraal", 12, 113),
-    verbinding("Dordrecht", "Rotterdam Centraal", 17, 114),
-    verbinding("Gouda", "Alphen a/d Rijn", 19, 115),
-    verbinding("Haarlem", "Beverwijk", 16, 116),
-    verbinding("Heemstede-Aerdenhout", "Haarlem", 6, 117),
-    verbinding("Leiden Centraal", "Heemstede-Aerdenhout", 13, 118),
-    verbinding("Leiden Centraal", "Alphen a/d Rijn", 14, 119),
-    verbinding("Leiden Centraal", "Schiphol Airport", 15, 120),
-    verbinding("Rotterdam Alexander", "Gouda", 10, 121),
-    verbinding("Rotterdam Centraal", "Schiedam Centrum", 5, 122),
-    verbinding("Rotterdam Centraal","Rotterdam Alexander", 8, 123),
-    verbinding("Schiedam Centrum", "Delft", 7, 124),
-    verbinding("Zaandam", "Castricum", 12, 125),
-    verbinding("Zaandam", "Beverwijk", 25, 126),
-    verbinding("Zaandam", "Hoorn", 26, 127)
+    Verbinding("Alkmaar","Hoorn",24),
+    Verbinding("Alkmaar", "Den Helder", 36),
+    Verbinding("Amsterdam Amstel", "Amsterdam Zuid", 10),
+    Verbinding("Amsterdam Amstel", "Amsterdam Centraal", 8),
+    Verbinding("Amsterdam Centraal", "Amsterdam Sloterdijk", 6),
+    Verbinding("Amsterdam Sloterdijk", "Haarlem", 11),
+    Verbinding("Amsterdam Sloterdijk", "Zaandam", 6),
+    Verbinding("Amsterdam Zuid","Amsterdam Sloterdijk", 16),
+    Verbinding("Amsterdam Zuid", "Schiphol Airport", 6),
+    Verbinding("Beverwijk", "Castricum", 13),
+    Verbinding("Castricum", "Alkmaar", 9),
+    Verbinding("Delft", "Den Haag Centraal", 13),
+    Verbinding("Den Haag Centraal", "Gouda", 18),
+    Verbinding("Den Haag Centraal", "Leiden Centraal", 12),
+    Verbinding("Dordrecht", "Rotterdam Centraal", 17),
+    Verbinding("Gouda", "Alphen a/d Rijn", 19),
+    Verbinding("Haarlem", "Beverwijk", 16),
+    Verbinding("Heemstede-Aerdenhout", "Haarlem", 6),
+    Verbinding("Leiden Centraal", "Heemstede-Aerdenhout", 13),
+    Verbinding("Leiden Centraal", "Alphen a/d Rijn", 14),
+    Verbinding("Leiden Centraal", "Schiphol Airport", 15),
+    Verbinding("Rotterdam Alexander", "Gouda", 10),
+    Verbinding("Rotterdam Centraal", "Schiedam Centrum", 5),
+    Verbinding("Rotterdam Centraal","Rotterdam Alexander", 8),
+    Verbinding("Schiedam Centrum", "Delft", 7),
+    Verbinding("Zaandam", "Castricum", 12),
+    Verbinding("Zaandam", "Beverwijk", 25),
+    Verbinding("Zaandam", "Hoorn", 26)
 ]
 
-class traject:
+class Traject:
     def __init__(self, traject_id, totale_tijd):
         self.traject_id = traject_id
         self.totale_tijd = totale_tijd
