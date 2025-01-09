@@ -86,5 +86,5 @@ class Netwerken:
     def __init__(self, netwerk):
         self.netwerk = []
 
-    def voeg_traject_toe(self, traject)
+    def voeg_traject_toe(self, traject):
         self.netwerk.append(traject)
