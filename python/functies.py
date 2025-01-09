@@ -9,7 +9,7 @@ traject = Traject(traject_id=1, totale_tijd=0)
 while totale_tijd < 120:
     # Vind verbindingen met huidig station
     mogelijke_verbindingen = [
-        v for v in verbindingen if v.station1 == huidig_station or v.station2 == huidig_station
+        v for v in Verbinding if v.station1 == huidig_station or v.station2 == huidig_station
     ]
 
     # Als er geen mogelijke verbindingen zijn dan stoppen
@@ -36,7 +36,7 @@ while totale_tijd < 120:
         huidig_station = kortste_verbinding.station1
 
     # Verwijder de gebruikte verbinding
-    verbindingen.remove(kortste_verbinding)
+    Verbinding.remove(kortste_verbinding)
 
 # Bereken de totale tijd van het traject
 traject.totale_tijd = traject.bereken_totale_tijd()
