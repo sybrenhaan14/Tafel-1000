@@ -56,13 +56,19 @@ class Traject:
     def __init__(self, traject_id, totale_tijd):
         self.traject_id = traject_id
         self.totale_tijd = totale_tijd
-        self.trein = []
+        self.traject = []
 
     def voeg_verbinding_toe(self, verbinding):
-        self.trein.append(verbinding)
+        self.traject.append(verbinding)
 
     def bereken_totale_tijd(self):
-        totale_tijd = sum(verbinding.tijd for verbinding in self.trein)
+        totale_tijd = sum(verbinding.tijd for verbinding in self.traject)
         return totale_tijd
 
 
+class Netwerken:
+    def __init__(self, netwerk):
+        self.netwerk = []
+
+    def voeg_traject_toe(self, traject)
+        self.netwerk.append(traject)
