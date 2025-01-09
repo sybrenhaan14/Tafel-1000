@@ -38,6 +38,3 @@ def verbindingen_vinden(huidig_station, totale_tijd, traject, verbindingen):
 def bereken_totale_tijd(traject):
     # Bereken de totale reistijd van het traject.
     return sum(verbinding.tijd for verbinding in traject.traject)
-
-
-
