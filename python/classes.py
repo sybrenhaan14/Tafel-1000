@@ -40,6 +40,10 @@ class Traject:
     def voeg_verbinding_toe(self, verbinding):
         self.traject.append(verbinding)
 
+    def __repr__(self):
+        verbindingen_str = "\n".join([f"{v.station1} ↔ {v.station2} ({v.tijd} min)" for v in self.traject])
+        return f"Traject {self.traject_id}:\n{verbindingen_str}\nTotale tijd: {self.totale_tijd} minuten"
+
 class Netwerken:
     def __init__(self, netwerk):
         self.netwerk = []
