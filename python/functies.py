@@ -1,9 +1,10 @@
+from classes import *
 
-
-# Startpunt en initialisatie
 huidig_station = "Alkmaar"
 totale_tijd = 0
-gekozen_verbindingen = []
+
+# Maak een nieuw traject object aan
+traject = Traject(traject_id=1, totale_tijd=0)  
 
 while totale_tijd < 120:
     # Vind verbindingen met huidig station
@@ -11,7 +12,7 @@ while totale_tijd < 120:
         v for v in verbindingen if v.station1 == huidig_station or v.station2 == huidig_station
     ]
 
-    # Als er geen mogelijke verbindingen meer zijn, stop de loop
+    # Als er geen mogelijke verbindingen zijn dan stoppen
     if not mogelijke_verbindingen:
         break
 
@@ -22,8 +23,10 @@ while totale_tijd < 120:
     if totale_tijd + kortste_verbinding.tijd > 120:
         break
 
-    # Voeg verbinding toe en update totale tijd
-    gekozen_verbindingen.append(kortste_verbinding)
+    # Voeg de verbinding toe aan het traject
+    traject.voeg_verbinding_toe(kortste_verbinding)
+
+    # Update de totale tijd met de tijd van de verbinding
     totale_tijd += kortste_verbinding.tijd
 
     # Update huidig station naar het andere station in de gekozen verbinding
@@ -34,3 +37,6 @@ while totale_tijd < 120:
 
     # Verwijder de gebruikte verbinding
     verbindingen.remove(kortste_verbinding)
+
+# Bereken de totale tijd van het traject
+traject.totale_tijd = traject.bereken_totale_tijd()
