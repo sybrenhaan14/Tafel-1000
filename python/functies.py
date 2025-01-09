@@ -39,3 +39,5 @@ def bereken_totale_tijd(traject):
     # Bereken de totale reistijd van het traject.
     return sum(verbinding.tijd for verbinding in traject.traject)
 
+
+
