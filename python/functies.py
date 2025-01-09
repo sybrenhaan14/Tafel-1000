@@ -32,7 +32,7 @@ def verbindingen_vinden(huidig_station, totale_tijd, traject, verbindingen):
 
         # Verwijder de gebruikte verbinding uit de lijst van verbindingen
         verbindingen.remove(kortste_verbinding)
-
+    print_traject(traject)
     return traject, totale_tijd
 
 def bereken_totale_tijd(traject):
