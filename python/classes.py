@@ -33,7 +33,6 @@ class Verbindingen:
 class Traject:
     def __init__(self, traject_id, totale_tijd):
         self.traject_id = traject_id
-        self.totale_tijd = totale_tijd
         self.traject = []
 
     def voeg_verbinding_toe(self, verbinding):

@@ -1,14 +1,18 @@
 from classes import *
 
-huidig_station = "Alkmaar"
+huidig_station = ""
 totale_tijd = 0
 
+
 def verbindingen_vinden(huidig_station, totale_tijd, traject, verbindingen):
+    totale_tijd = 0
     while totale_tijd < 120:
         # Zoek verbindingen die aansluiten bij het huidige station
         mogelijke_verbindingen = [
             v for v in verbindingen if v.station1 == huidig_station or v.station2 == huidig_station
         ]
+
+        totale_tijd = bereken_totale_tijd(traject)
 
         # Stop als er geen mogelijke verbindingen meer zijn
         if not mogelijke_verbindingen:
@@ -23,7 +27,6 @@ def verbindingen_vinden(huidig_station, totale_tijd, traject, verbindingen):
 
         # Voeg de verbinding toe aan het traject
         traject.voeg_verbinding_toe(kortste_verbinding)
-        totale_tijd += kortste_verbinding.tijd
 
         # Update het huidige station naar het andere station in de verbinding
         huidig_station = (
@@ -33,7 +36,7 @@ def verbindingen_vinden(huidig_station, totale_tijd, traject, verbindingen):
         # Verwijder de gebruikte verbinding uit de lijst van verbindingen
         verbindingen.remove(kortste_verbinding)
 
-    return traject, totale_tijd
+    return traject
 
 def bereken_totale_tijd(traject):
     # Bereken de totale reistijd van het traject.
