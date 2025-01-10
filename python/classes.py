@@ -32,7 +32,7 @@ class Verbindingen:
 
 
 class Traject:
-    def __init__(self, traject_id, totale_tijd):
+    def __init__(self, traject_id):
         self.traject_id = traject_id
         self.traject = []
 
@@ -46,5 +46,3 @@ class Netwerken:
     def voeg_traject_toe(self, traject):
         self.netwerk.append(traject)
 
-lijst = Verbindingen()
-print(lijst.verbindingen)

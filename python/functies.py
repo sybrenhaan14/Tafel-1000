@@ -1,7 +1,5 @@
 from classes import *
 
-huidig_station = ""
-totale_tijd = 0
 
 def vind_mogelijke_verbindingen(huidig_station, verbindingen):
     #Zoek verbindingen die aansluiten bij het huidige station
@@ -54,4 +52,10 @@ def bereken_totale_tijd(traject):
     # Bereken de totale reistijd van het traject.
     return sum(verbinding.tijd for verbinding in traject.traject)
 
-
+tijd = 0
+lijst = Verbindingen()
+traject_1 = Traject(1)
+traject_1 = verbindingen_vinden("Den Helder", tijd , traject_1, lijst.verbindingen)
+print(traject_1.traject)
+totale_tijd = bereken_totale_tijd(traject_1)
+print(totale_tijd)
