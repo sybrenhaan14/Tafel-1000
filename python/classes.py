@@ -30,6 +30,7 @@ class Verbindingen:
                 verbinding = Verbinding(row['station1'], row['station2'], row['distance'])
                 self.verbindingen.append(verbinding)
 
+
 class Traject:
     def __init__(self, traject_id, totale_tijd):
         self.traject_id = traject_id
@@ -46,4 +47,4 @@ class Netwerken:
         self.netwerk.append(traject)
 
 lijst = Verbindingen()
-print(lijst)
+print(lijst.verbindingen)
