@@ -20,7 +20,7 @@ class Verbinding:
 class Verbindingen:
     def __init__(self):
         self.verbindingen = []
-        self.laad_verbindingen('../csv_files/ConnectiesHolland')
+        self.laad_verbindingen('../csv_files/ConnectiesHolland.csv')
 
     def laad_verbindingen(self, bestand):
         # Lees de verbindingen uit een CSV bestand en sla ze op als Verbinding objecten
