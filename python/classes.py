@@ -1,8 +1,8 @@
 import csv
 
-def laad_stations(self):
+def laad_stations(self, naam):
     stations = []
-    with open('../csv_files/StationsHolland.csv', 'r', encoding='utf-8') as csvfile:
+    with open(naam, 'r', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             stations.append(row['station'])
@@ -20,11 +20,11 @@ class Verbinding:
 class Verbindingen:
     def __init__(self):
         self.verbindingen = []
-        self.laad_verbindingen('../csv_files/ConnectiesHolland.csv')
+        self.laad_verbindingen('../csv_files/ConnectiesHolland')
 
     def laad_verbindingen(self, bestand):
         # Lees de verbindingen uit een CSV bestand en sla ze op als Verbinding objecten
-        with open('../csv_files/ConnectiesHolland.csv', 'r', encoding='utf-8') as csvfile:
+        with open(bestand, 'r', encoding='utf-8') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
                 verbinding = Verbinding(row['station1'], row['station2'], row['distance'])
@@ -44,3 +44,6 @@ class Netwerken:
 
     def voeg_traject_toe(self, traject):
         self.netwerk.append(traject)
+
+lijst = Verbindingen()
+print(lijst)
