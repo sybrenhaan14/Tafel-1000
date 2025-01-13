@@ -81,5 +81,7 @@ class Opties:
             for v in self.verbindingen.verbindingen:
                 if v.station1 == station or v.station2 == station:
                     self.opties[station].append(v)
-    
+
+    def laad_opties(self, station):
+        return self.opties.get(station, [])
 
