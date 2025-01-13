@@ -46,3 +46,35 @@ class Netwerken:
     def voeg_traject_toe(self, traject):
         self.netwerk.append(traject)
 
+class Verbindingzoeker:
+    def __init__(self, verbindingen):
+        self.verbindingen = verbindingen
+    
+    def vind_mogelijke_verbindingen(huidig_station, verbindingen):
+        #Zoek verbindingen die aansluiten bij het huidige station
+        return [
+         v for v in verbindingen if v.station1 == huidig_station or v.station2 == huidig_station
+        ]
+    def vind_kortste_verbinding(mogelijke_verbindingen):
+        #Vind de verbinding met de kortste reistijd
+        return min(mogelijke_verbindingen, key=lambda v: v.tijd)
+    
+    def update_huidig_station(huidig_station, kortste_verbinding):
+        #Werk het huidige station bij op basis van de verbinding
+        return kortste_verbinding.station2 if kortste_verbinding.station1 == huidig_station else kortste_verbinding.station1
+    
+    def voeg_verbinding_toe_en_update_tijd(traject, kortste_verbinding, totale_tijd):
+        #Voeg de verbinding toe aan het traject en werk de totale tijd bij
+        traject.voeg_verbinding_toe(kortste_verbinding)
+        return totale_tijd + kortste_verbinding.tijd
+
+class Opties:
+    def __init__(self, stations, verbindingen, opties):
+        self.opties = {}
+        stations = laad_staions("../Data/StationsHolland.csv")
+        verbindingen = Verbindingen()
+    
+    def opties_zoeken(stations, verbindingen):
+        for v in verbindingen:
+            if v is == station1:
+
