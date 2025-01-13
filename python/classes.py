@@ -69,7 +69,7 @@ class Verbindingzoeker:
         return totale_tijd + kortste_verbinding.tijd
 
 class Opties:
-    def __init__(self, stations, verbindingen, opties):
+    def _init_(self, stations, verbindingen, opties):
         self.opties = {}
         stations = laad_staions("../Data/StationsHolland.csv")
         verbindingen = Verbindingen()
