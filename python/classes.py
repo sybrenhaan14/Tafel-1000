@@ -73,8 +73,13 @@ class Opties:
         self.opties = {}
         stations = laad_staions("../Data/StationsHolland.csv")
         verbindingen = Verbindingen()
+        self.opties_zoeken
+
+    def opties_zoeken(self):
+        for station in self.stations:
+            self.opties[station] = []
+            for v in self.verbindingen.verbindingen:
+                if v.station1 == station or v.station2 == station:
+                    self.opties[station].append(v)
     
-    def opties_zoeken(stations, verbindingen):
-        for v in verbindingen:
-            if v is == station1:
 
