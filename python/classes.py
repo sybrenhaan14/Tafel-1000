@@ -1,6 +1,6 @@
 import csv
 
-def laad_stations(self, naam):
+def laad_stations(naam):
     stations = []
     with open(naam, 'r', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
@@ -73,7 +73,6 @@ class Opties:
         self.opties = {}
         self.stations = stations
         self.verbindingen = verbindingen
-        self.opties_zoeken
     
     def opties_zoeken(self):
         for station in self.stations:
@@ -90,4 +89,5 @@ class Opties:
 lijst = Verbindingen()
 lijst_stations = laad_stations("../Data/StationsHolland.csv")
 optie = Opties(lijst_stations, lijst)
+optie.opties_zoeken()
 print(optie.opties)
