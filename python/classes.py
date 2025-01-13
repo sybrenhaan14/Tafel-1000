@@ -20,7 +20,7 @@ class Verbinding:
 class Verbindingen:
     def __init__(self):
         self.verbindingen = []
-        self.laad_verbindingen('../csv_files/ConnectiesHolland.csv')
+        self.laad_verbindingen('../Data/ConnectiesHolland.csv')
 
     def laad_verbindingen(self, bestand):
         # Lees de verbindingen uit een CSV bestand en sla ze op als Verbinding objecten
@@ -69,12 +69,12 @@ class Verbindingzoeker:
         return totale_tijd + kortste_verbinding.tijd
 
 class Opties:
-    def _init_(self, stations, verbindingen, opties):
+    def __init__(self, stations, verbindingen):
         self.opties = {}
-        stations = laad_staions("../Data/StationsHolland.csv")
-        verbindingen = Verbindingen()
+        self.stations = stations
+        self.verbindingen = verbindingen
         self.opties_zoeken
-
+    
     def opties_zoeken(self):
         for station in self.stations:
             self.opties[station] = []
@@ -84,4 +84,10 @@ class Opties:
 
     def laad_opties(self, station):
         return self.opties.get(station, [])
+    
 
+
+lijst = Verbindingen()
+lijst_stations = laad_stations("../Data/StationsHolland.csv")
+optie = Opties(lijst_stations, lijst)
+print(optie.opties)
