@@ -98,7 +98,7 @@ class Opties:
     
     def kies_opties(self, station):
         keuze = self.opties.get(station, [])
-        return keuze[0]
+        return random.choice(keuze)
 
 def verbindingen_vinden(huidig_station, opties, traject):
     totale_tijd = 0
