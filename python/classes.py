@@ -1,4 +1,9 @@
 import csv
+import random 
+
+def kies_startstation (stations):
+    stations = laad_stations("../Data/StationsHolland.csv")
+    random_start_station = random.choice(stations)
 
 def laad_stations(naam):
     stations = []
