@@ -127,9 +127,6 @@ def verbindingen_vinden(huidig_station, opties, traject):
         totale_tijd += verbinding.tijd
         huidig_station = volgende_station
 
-        # Verwijder de gebruikte verbinding uit de lijst
-        opties.verbindingen.verbindingen.remove(verbinding)
-
     return traject
 
 lijst_stations = laad_stations("../Data/StationsHolland.csv")
