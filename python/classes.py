@@ -3,14 +3,15 @@ import random
 
 def kies_startstation (stations):
     stations = laad_stations("../Data/StationsHolland.csv")
-    random_start_station = random.choice(stations)
+    random_start_station = random.choice(list(stations))
+    return random_start_station
 
 def laad_stations(naam):
-    stations = []
+    stations = set()
     with open(naam, 'r', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
-            stations.append(row['station'])
+            stations.add(row['station']) 
     return stations
 
 class Verbinding:
@@ -104,8 +105,6 @@ def verbindingen_vinden(huidig_station, opties, traject):
     while totale_tijd < 120:
         # Gebruik opties om de eerste verbinding te kiezen
         volgende_station = opties.kies_opties(huidig_station)
-        print(f"Beschikbare opties vanaf{huidig_station}: {opties.laad_opties(huidig_station)}")
-
         if not volgende_station:
             break  # Geen verdere verbindingen mogelijk
 
@@ -117,12 +116,10 @@ def verbindingen_vinden(huidig_station, opties, traject):
             None
         )
         if not verbinding:
-            print(f"Beschikbare opties vanaf{huidig_station}: {opties.laad_opties(huidig_station)}")
             break
 
         # Controleer of de tijdslimiet niet wordt overschreden
         if totale_tijd + verbinding.tijd > 120:
-            print(f"Beschikbare opties vanaf{huidig_station}: {opties.laad_opties(huidig_station)}")
             break
 
         # Voeg de verbinding toe en werk de tijd en het huidige station bij
@@ -140,10 +137,9 @@ verbindingen_lijst = Verbindingen()
 opties = Opties(lijst_stations, verbindingen_lijst)
 
 traject_1 = Traject(1)
-start_station = random.choice(lijst_stations)
+start_station = kies_startstation(lijst_stations)
 traject_1 = verbindingen_vinden(start_station, opties, traject_1)
 
 print(f"Startstation: {start_station}")
 print("Traject:", traject_1.traject)
 print("Totale reistijd:", traject_1.bereken_totale_tijd())
-
