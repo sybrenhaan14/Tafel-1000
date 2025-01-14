@@ -46,27 +46,27 @@ class Netwerken:
     def voeg_traject_toe(self, traject):
         self.netwerk.append(traject)
 
-class Verbindingzoeker:
-    def __init__(self, verbindingen):
-        self.verbindingen = verbindingen
+# class Verbindingzoeker:
+#     def __init__(self, verbindingen):
+#         self.verbindingen = verbindingen
     
-    def vind_mogelijke_verbindingen(huidig_station, verbindingen):
-        #Zoek verbindingen die aansluiten bij het huidige station
-        return [
-         v for v in verbindingen if v.station1 == huidig_station or v.station2 == huidig_station
-        ]
-    def vind_kortste_verbinding(mogelijke_verbindingen):
-        #Vind de verbinding met de kortste reistijd
-        return min(mogelijke_verbindingen, key=lambda v: v.tijd)
+#     def vind_mogelijke_verbindingen(huidig_station, verbindingen):
+#         #Zoek verbindingen die aansluiten bij het huidige station
+#         return [
+#          v for v in verbindingen if v.station1 == huidig_station or v.station2 == huidig_station
+#         ]
+#     def vind_kortste_verbinding(mogelijke_verbindingen):
+#         #Vind de verbinding met de kortste reistijd
+#         return min(mogelijke_verbindingen, key=lambda v: v.tijd)
     
-    def update_huidig_station(huidig_station, kortste_verbinding):
-        #Werk het huidige station bij op basis van de verbinding
-        return kortste_verbinding.station2 if kortste_verbinding.station1 == huidig_station else kortste_verbinding.station1
+#     def update_huidig_station(huidig_station, kortste_verbinding):
+#         #Werk het huidige station bij op basis van de verbinding
+#         return kortste_verbinding.station2 if kortste_verbinding.station1 == huidig_station else kortste_verbinding.station1
     
-    def voeg_verbinding_toe_en_update_tijd(traject, kortste_verbinding, totale_tijd):
-        #Voeg de verbinding toe aan het traject en werk de totale tijd bij
-        traject.voeg_verbinding_toe(kortste_verbinding)
-        return totale_tijd + kortste_verbinding.tijd
+#     def voeg_verbinding_toe_en_update_tijd(traject, kortste_verbinding, totale_tijd):
+#         #Voeg de verbinding toe aan het traject en werk de totale tijd bij
+#         traject.voeg_verbinding_toe(kortste_verbinding)
+#         return totale_tijd + kortste_verbinding.tijd
 
 class Opties:
     def __init__(self, stations, verbindingen):
@@ -78,12 +78,17 @@ class Opties:
         for station in self.stations:
             self.opties[station] = []
             for v in self.verbindingen.verbindingen:
-                if v.station1 == station or v.station2 == station:
-                    self.opties[station].append(v)
+                if v.station1 == station:
+                    self.opties[station].append(v.station2)
+                if v.station2 == station:
+                    self.opties[station].append(v.station1)
 
     def laad_opties(self, station):
         return self.opties.get(station, [])
     
+    def kies_opties(self, station):
+        keuze = self.opties.get(station, [])
+        return keuze[0]
 
 
 lijst = Verbindingen()
