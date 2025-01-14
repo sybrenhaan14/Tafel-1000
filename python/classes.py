@@ -44,6 +44,9 @@ class Traject:
     def voeg_verbinding_toe(self, verbinding):
         self.traject.append(verbinding)
 
+    def bereken_totale_tijd(self):
+        return sum(verbinding.tijd for verbinding in self.traject)
+
 class Netwerken:
     def __init__(self, netwerk):
         self.netwerk = []
@@ -78,6 +81,7 @@ class Opties:
         self.opties = {}
         self.stations = stations
         self.verbindingen = verbindingen
+        self.opties_zoeken()
     
     def opties_zoeken(self):
         for station in self.stations:
@@ -95,9 +99,46 @@ class Opties:
         keuze = self.opties.get(station, [])
         return keuze[0]
 
+def verbindingen_vinden(huidig_station, opties, traject):
+    totale_tijd = 0
+    while totale_tijd < 120:
+        # Gebruik opties om de eerste verbinding te kiezen
+        volgende_station = opties.kies_opties(huidig_station)
+        if not volgende_station:
+            break  # Geen verdere verbindingen mogelijk
 
-lijst = Verbindingen()
+        # Zoek de verbinding tussen het huidige en volgende station
+        verbinding = next(
+            (v for v in opties.verbindingen.verbindingen
+             if (v.station1 == huidig_station and v.station2 == volgende_station) or
+                (v.station2 == huidig_station and v.station1 == volgende_station)),
+            None
+        )
+        if not verbinding:
+            break
+
+        # Controleer of de tijdslimiet niet wordt overschreden
+        if totale_tijd + verbinding.tijd > 120:
+            break
+
+        # Voeg de verbinding toe en werk de tijd en het huidige station bij
+        traject.voeg_verbinding_toe(verbinding)
+        totale_tijd += verbinding.tijd
+        huidig_station = volgende_station
+
+        # Verwijder de gebruikte verbinding uit de lijst
+        opties.verbindingen.verbindingen.remove(verbinding)
+
+    return traject
+
 lijst_stations = laad_stations("../Data/StationsHolland.csv")
-optie = Opties(lijst_stations, lijst)
-optie.opties_zoeken()
-print(optie.opties)
+verbindingen_lijst = Verbindingen()
+opties = Opties(lijst_stations, verbindingen_lijst)
+
+traject_1 = Traject(1)
+start_station = random.choice(lijst_stations)
+traject_1 = verbindingen_vinden(start_station, opties, traject_1)
+
+print(f"Startstation: {start_station}")
+print("Traject:", traject_1.traject)
+print("Totale reistijd:", traject_1.bereken_totale_tijd())
