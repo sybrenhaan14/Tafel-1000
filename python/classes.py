@@ -104,6 +104,8 @@ def verbindingen_vinden(huidig_station, opties, traject):
     while totale_tijd < 120:
         # Gebruik opties om de eerste verbinding te kiezen
         volgende_station = opties.kies_opties(huidig_station)
+        print(f"Beschikbare opties vanaf{huidig_station}: {opties.laad_opties(huidig_station)}")
+
         if not volgende_station:
             break  # Geen verdere verbindingen mogelijk
 
@@ -115,10 +117,12 @@ def verbindingen_vinden(huidig_station, opties, traject):
             None
         )
         if not verbinding:
+            print(f"Beschikbare opties vanaf{huidig_station}: {opties.laad_opties(huidig_station)}")
             break
 
         # Controleer of de tijdslimiet niet wordt overschreden
         if totale_tijd + verbinding.tijd > 120:
+            print(f"Beschikbare opties vanaf{huidig_station}: {opties.laad_opties(huidig_station)}")
             break
 
         # Voeg de verbinding toe en werk de tijd en het huidige station bij
@@ -142,3 +146,4 @@ traject_1 = verbindingen_vinden(start_station, opties, traject_1)
 print(f"Startstation: {start_station}")
 print("Traject:", traject_1.traject)
 print("Totale reistijd:", traject_1.bereken_totale_tijd())
+
