@@ -1,5 +1,7 @@
-Class Vinden:
-
+class Vinden:
+def __init__(self, naam):
+        self.stations = self.laad_stations(naam)
+        self.bezochte_stations = set()
 
 def verbindingen_vinden(huidig_station, opties, traject, station_set):
     totale_tijd = 0
