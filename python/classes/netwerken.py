@@ -19,7 +19,7 @@ class Netwerken:
         while trajecten < self.max_trajecten and len(bezochte_stations) < len(self.stations_set.stations):
             traject = Traject(trajecten + 1)
             start_station = self.kies_startstation(bezochte_stations)
-            self.stations_set.markeer_bezocht(start_station)  
+            self.stations_set.eerder_bezocht(start_station)  
             self.voeg_verbindingen_toe(start_station, traject, bezochte_stations)
 
             

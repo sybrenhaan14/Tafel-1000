@@ -6,8 +6,8 @@ from verbinding import *
 from netwerk import *
 from traject import *
 
-set_stations = Stations("../Data/StationsHolland.csv")
-verbindingen_lijst = Verbindingen('../Data/ConnectiesHolland.csv')
+set_stations = Stations('../Data/StationsHolland.csv')
+verbindingen_lijst = Verbindingen()
 
 netwerken = Netwerken(set_stations, verbindingen_lijst)
 netwerk = netwerken.genereer_trajecten()
