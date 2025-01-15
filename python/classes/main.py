@@ -5,6 +5,7 @@ from netwerken import *
 from verbinding import *
 from netwerk import *
 from traject import *
+from score import *
 
 set_stations = Stations('../Data/StationsHolland.csv')
 verbindingen_lijst = Verbindingen()
@@ -13,17 +14,20 @@ netwerken = Netwerken(set_stations, verbindingen_lijst)
 netwerk = netwerken.genereer_trajecten()
 
 for traject in netwerk.netwerk:
-    print(f"Traject {traject.traject_id}:")
+    print(f'Traject {traject.traject_id}:')
     for verbinding in traject.traject:
-        print(f"  {verbinding}")
-    print(f"Totaal tijd: {traject.bereken_totale_tijd()} minuten\n")
+        print(f'  {verbinding}')
+    print(f'Totaal tijd: {traject.bereken_totale_tijd()} minuten')
 
 
 niet_bezochte_stations = netwerken.controleer_niet_bezochte_stations()
 
 if niet_bezochte_stations:
-    print("Er zijn nog niet-bezochte stations:")
+    print('Er zijn nog niet-bezochte stations:')
     for station in niet_bezochte_stations:
         print(station)
 else:
-    print("Alle stations zijn bezocht!")
+    print('Alle stations zijn bezocht!')
+    score_calculator = Score(netwerk)
+    score = score_calculator.bereken_score()
+    print(f'De kwaliteit van de lijnvoering (score) is: {score}')
