@@ -12,3 +12,11 @@ class Verbindingen:
             for row in reader:
                 verbinding = Verbinding(row['station1'], row['station2'], row['distance'])
                 self.verbindingen.append(verbinding)
+
+    def zoek_verbinding(self, station1, station2):
+        return next(
+            (v for v in self.verbindingen 
+             if (v.station1 == station1 and v.station2 == station2) or 
+                (v.station2 == station1 and v.station1 == station2)),
+            None
+        )
