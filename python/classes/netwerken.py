@@ -1,5 +1,7 @@
 import random
-from classes import *
+from netwerk import *
+from opties import *
+from traject import *
 
 class Netwerken:
     def __init__(self, stations_set, verbindingen_lijst, max_trajecten=7, tijdslimiet=120):

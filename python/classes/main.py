@@ -1,6 +1,10 @@
-from classes import *
 import random
-
+from stations import *
+from verbindingen import *
+from netwerken import *
+from verbinding import *
+from netwerk import *
+from traject import *
 
 set_stations = Stations("../Data/StationsHolland.csv")
 verbindingen_lijst = Verbindingen('../Data/ConnectiesHolland.csv')

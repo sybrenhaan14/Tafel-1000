@@ -1,4 +1,5 @@
 import csv
+from verbinding import *
 
 class Verbindingen:
     def __init__(self):
