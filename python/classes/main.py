@@ -26,12 +26,14 @@ def main():
     score = score_calculator.bereken_score()
     output.append(("score", score))
 
+    print(f"Generated output: {output}")
     return output
 
 
 if __name__ == "__main__":
     output_file = "output.csv"
-    main()
+    check = main()
+    print(f"{check}")
     # with open(output_file, mode="w", newline="", encoding="utf-8") as file:
     #     writer = csv.writer(file)
 
