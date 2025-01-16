@@ -23,6 +23,7 @@ class Netwerken:
             start_station = self.kies_startstation()
         # Voeg meer verbindingen toe totdat het traject vol is
             while not traject.is_volledig():
+                volgende_verbinding = Opties.volgende_verbinding(huidig_station, bereden_verbindingen)
                 if volgende_verbinding:
                     traject.voeg_verbinding_toe(volgende_verbinding, verbindingen)
                 netwerk.voeg_traject_toe(traject)

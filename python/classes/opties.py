@@ -28,3 +28,14 @@ class Opties:
         # zo niet kies een random station
         if keuzes:
             return random.choice(keuzes)
+        
+    def volgende_verbinding(self, station, bereden_verbindingen):
+        keuzes = self.opties.get(station, [])
+        # Filter stations die niet bezocht zijn
+        ongebruikte_verbinding = [k for k in keuzes if k not in bereden_verbindingen]
+        # Als er niet-bezochte stations zijn, kies daaruit
+        if ongebruikte_verbinding:
+            return random.choice(ongebruikte_verbinding)
+        # zo niet kies een random station
+        if keuzes:
+            return random.choice(keuzes)
