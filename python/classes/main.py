@@ -14,24 +14,29 @@ def main():
     netwerken = Netwerken(set_stations, verbindingen_lijst)
     netwerk = netwerken.genereer_trajecten()
 
-    for traject in netwerk.netwerk:
-        print(f'Traject {traject.traject_id}:')
-        for verbinding in traject.traject:
-            print(f'  {verbinding}')
-        print(f'Totaal tijd: {traject.bereken_totale_tijd()} minuten')
+    output = [("train", "stations")]
+    for i, traject in enumerate(netwerk.netwerk, start=1):
+        station_names = [verbinding.station1 for verbinding in traject.traject]
+        if traject.traject:
+            station_names.append(traject.traject[-1].station2)
+        output.append((f"train_{i}", f"[{', '.join(station_names)}]"))
 
+    
+    score_calculator = Score(netwerk)
+    score = score_calculator.bereken_score()
+    output.append(("score", score))
 
-    niet_bezochte_stations = netwerken.controleer_niet_bezochte_stations()
+    return output
 
-    if niet_bezochte_stations:
-        print('Er zijn nog niet-bezochte stations:')
-        for station in niet_bezochte_stations:
-            print(station)
-    else:
-        print('Alle stations zijn bezocht!')
-        score_calculator = Score(netwerk)
-        score = score_calculator.bereken_score()
-        print(f'De kwaliteit van de lijnvoering (score) is: {score}')
 
 if __name__ == "__main__":
-    main()
+    output_file = "output.csv"
+
+    with open(output_file, mode="w", newline="", encoding="utf-8") as file:
+        writer = csv.writer(file)
+
+        count = 0
+        while count < 10000:
+            data = main()  
+            writer.writerows(data)
+            count += 1
