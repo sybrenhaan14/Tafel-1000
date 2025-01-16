@@ -21,26 +21,16 @@ class Netwerken:
         while not netwerk.alle_verbindingen_bereikt(verbindingen):
             traject = Traject(trajecten + 1)
             start_station = self.kies_startstation()
-<<<<<<< HEAD
-                    # Voeg verbindingen toe aan het traject
+            # Voeg verbindingen toe aan het traject
             huidig_station = start_station
             bereden_verbindingen = set()
-=======
-        # Voeg meer verbindingen toe totdat het traject vol is
-            while not traject.is_volledig():
-                volgende_verbinding = Opties.volgende_verbinding(huidig_station, bereden_verbindingen)
-                if volgende_verbinding:
-                    traject.voeg_verbinding_toe(volgende_verbinding, verbindingen)
-                netwerk.voeg_traject_toe(traject)
-                trajecten += 1
->>>>>>> c4112835277a61bec8187d25fffcd548179830ee
 
             # Voeg verbindingen toe tot het traject de tijdslimiet overschrijdt of alle verbindingen zijn bereden
             self.voeg_verbindingen_toe(huidig_station, traject, bereden_verbindingen)
 
             # Voeg het traject toe aan het netwerk
             netwerk.voeg_traject_toe(traject)
-            return self.netwerk
+        return self.netwerk
 
     def kies_startstation(self):
         return random.choice(list(self.stations_set.stations))
@@ -51,20 +41,20 @@ class Netwerken:
         totale_tijd = 0
 
         while totale_tijd < self.tijdslimiet:
-            volgende_verbinding = opties.kies_opties(huidig_station)
+            volgende_verbinding, volgend_station = opties.kies_opties(huidig_station)
             bereden_verbindingen.add(volgende_verbinding)
             
             if volgende_verbinding in bereden_verbindingen:
                 break
 
             
-            verbinding = self.verbindingen_lijst.zoek_verbinding(huidig_station, volgende_verbinding)
+            verbinding = volgende_verbinding
             if verbinding:
                 if totale_tijd + verbinding.tijd > self.tijdslimiet:
                     break  
-                traject.voeg_verbinding_toe(verbinding)
+                Traject.traject.voeg_verbinding_toe(verbinding)
                 totale_tijd += verbinding.tijd
-                huidig_station = volgende_verbinding
+                huidig_station = volgend_station
             else:
                 break
 

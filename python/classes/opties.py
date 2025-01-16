@@ -25,5 +25,5 @@ class Opties:
             keuze = random.choice(keuzes)
             gekozen_verbinding = self.verbindingen.zoek_verbinding(station, keuze)
             if not gekozen_verbinding in self.verbindingen.bereden_verbindingen:
-                return gekozen_verbinding
+                return gekozen_verbinding, keuze
 
