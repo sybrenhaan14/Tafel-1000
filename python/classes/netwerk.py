@@ -6,12 +6,5 @@ class Netwerk:
     def voeg_traject_toe(self, traject):
         self.netwerk.append(traject)
 
-    def alle_stations_bereikt(self, set_stations):
-        #Controleer of alle stations zijn aangetikt
-        bezochte_stations = set()
-        for traject in self.netwerk:
-            for verbinding in traject.traject:
-                bezochte_stations.add(verbinding.station1)
-                bezochte_stations.add(verbinding.station2)
-
-        return bezochte_stations == set_stations
+    def alle_verbindingen_bereikt(self, verbindingen):
+        return len(verbindingen.bezochte_verbindingen) == len(verbindingen.verbindingen)
