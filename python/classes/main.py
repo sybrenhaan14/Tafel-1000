@@ -8,11 +8,11 @@ from traject import *
 from score import *
 
 def main():
-    set_stations = Stations('../Data/StationsHolland.csv')
+    set_stations = Stations('../../Data/StationsHolland.csv')
     verbindingen_lijst = Verbindingen()
 
     netwerken = Netwerken(set_stations, verbindingen_lijst)
-    netwerk = netwerken.genereer_trajecten()
+    netwerk = netwerken.genereer_trajecten(set_stations, verbindingen_lijst)
 
     output = [("train", "stations")]
     for i, traject in enumerate(netwerk.netwerk, start=1):
@@ -31,12 +31,12 @@ def main():
 
 if __name__ == "__main__":
     output_file = "output.csv"
+    main()
+    # with open(output_file, mode="w", newline="", encoding="utf-8") as file:
+    #     writer = csv.writer(file)
 
-    with open(output_file, mode="w", newline="", encoding="utf-8") as file:
-        writer = csv.writer(file)
-
-        count = 0
-        while count < 10000:
-            data = main()  
-            writer.writerows(data)
-            count += 1
+    #     count = 0
+    #     while count < 10000:
+    #         data = main()  
+    #         writer.writerows(data)
+    #         count += 1

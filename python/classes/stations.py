@@ -14,7 +14,7 @@ class Stations:
                 stations_list.add(row['station']) 
         return stations_list
     
-    def kies_startstation (set_stations):
+    def kies_startstation(set_stations):
         return random.choice(list(set_stations))
 
     def is_bezocht(self, station):

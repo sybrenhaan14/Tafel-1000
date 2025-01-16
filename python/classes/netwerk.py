@@ -7,4 +7,4 @@ class Netwerk:
         self.netwerk.append(traject)
 
     def alle_verbindingen_bereikt(self, verbindingen):
-        return len(verbindingen.bezochte_verbindingen) == len(verbindingen.verbindingen)
+        return len(verbindingen.bereden_verbindingen) == len(verbindingen.verbindingen)

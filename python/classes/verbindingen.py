@@ -4,7 +4,7 @@ from verbinding import *
 class Verbindingen:
     def __init__(self):
         self.verbindingen = []
-        self.laad_verbindingen('../Data/ConnectiesHolland.csv')
+        self.laad_verbindingen('../../Data/ConnectiesHolland.csv')
         self.bereden_verbindingen = set()
 
     def laad_verbindingen(self, bestand):

@@ -20,10 +20,9 @@ class Netwerken:
 
         while not netwerk.alle_verbindingen_bereikt(verbindingen):
             traject = Traject(trajecten + 1)
-            start_station = self.kies_startstation(stations)
+            start_station = self.kies_startstation()
         # Voeg meer verbindingen toe totdat het traject vol is
             while not traject.is_volledig():
-                volgende_verbinding = traject.kies_volgende_verbinding(traject, verbindingen)
                 if volgende_verbinding:
                     traject.voeg_verbinding_toe(volgende_verbinding, verbindingen)
                 netwerk.voeg_traject_toe(traject)
@@ -31,10 +30,8 @@ class Netwerken:
 
             return self.netwerk
 
-    def kies_startstation(self, bezochte_stations):
-
-        overgebleven_stations = self.stations_set.stations - bezochte_stations
-        return random.choice(list(overgebleven_stations))
+    def kies_startstation(self):
+        return random.choice(list(self.stations_set.stations))
 
     def voeg_verbindingen_toe(self, huidig_station, traject, bezochte_stations):
         
