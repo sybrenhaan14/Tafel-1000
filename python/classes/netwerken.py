@@ -2,6 +2,9 @@ import random
 from netwerk import *
 from opties import *
 from traject import *
+from verbindingen import *
+from stations import *
+
 
 class Netwerken:
     def __init__(self, stations_set, verbindingen_lijst, max_trajecten=7, tijdslimiet=120):
@@ -11,26 +14,22 @@ class Netwerken:
         self.tijdslimiet = tijdslimiet
         self.netwerk = Netwerk()
 
-    def genereer_trajecten(self):
-        
-        bezochte_stations = set() 
+    def genereer_trajecten(self, stations, verbindingen):
+        netwerk = Netwerk()
         trajecten = 0
 
-        while trajecten < self.max_trajecten and len(bezochte_stations) < len(self.stations_set.stations):
+        while not netwerk.alle_verbindingen_bereikt(verbindingen):
             traject = Traject(trajecten + 1)
-            start_station = self.kies_startstation(bezochte_stations)
-            self.stations_set.eerder_bezocht(start_station)  
-            self.voeg_verbindingen_toe(start_station, traject, bezochte_stations)
+            start_station = self.kies_startstation(stations)
+        # Voeg meer verbindingen toe totdat het traject vol is
+            while not traject.is_volledig():
+                volgende_verbinding = traject.kies_volgende_verbinding(traject, verbindingen)
+                if volgende_verbinding:
+                    traject.voeg_verbinding_toe(volgende_verbinding, verbindingen)
+                netwerk.voeg_traject_toe(traject)
+                trajecten += 1
 
-            
-            for v in traject.traject:
-                bezochte_stations.add(v.station1)
-                bezochte_stations.add(v.station2)
-
-            self.netwerk.voeg_traject_toe(traject)
-            trajecten += 1
-
-        return self.netwerk
+            return self.netwerk
 
     def kies_startstation(self, bezochte_stations):
 
