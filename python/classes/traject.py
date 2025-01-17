@@ -1,4 +1,3 @@
-from verbindingen import *
 class Traject:
     def __init__(self, traject_id):
         self.traject_id = traject_id
@@ -12,7 +11,6 @@ class Traject:
            (verbinding.station2, verbinding.station1) not in self.gebruikte_verbindingen:
             self.traject.append(verbinding)
             self.gebruikte_verbindingen.add((verbinding.station1, verbinding.station2))
-            Verbindingen.is_bereden(verbinding)
             self.totale_tijd += verbinding.tijd
 
     def bereken_totale_tijd(self):

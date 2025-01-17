@@ -21,11 +21,11 @@ def main():
         print(f'Totaal tijd: {traject.bereken_totale_tijd()} minuten')
 
 
-    niet_bezochte_stations = netwerken.controleer_niet_bezochte_stations()
+    niet_bezochte_verbindingen = netwerken.controleer_niet_bezochte_verbindingen()
 
-    if niet_bezochte_stations:
+    if niet_bezochte_verbindingen:
         print('Er zijn nog niet-bezochte stations:')
-        for station in niet_bezochte_stations:
+        for station in niet_bezochte_verbindingen:
             print(station)
     else:
         print('Alle stations zijn bezocht!')

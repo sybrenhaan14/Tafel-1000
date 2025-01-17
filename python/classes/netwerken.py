@@ -21,12 +21,8 @@ class Netwerken:
             traject = Traject(trajecten + 1)
             start_station = self.kies_startstation(bezochte_stations)
             self.stations_set.eerder_bezocht(start_station)  
-            self.voeg_verbindingen_toe(start_station, traject, gereden_verbindingen, bezochte_stations)
+            self.voeg_verbindingen_toe(start_station, traject, gereden_verbindingen)
 
-            
-            for v in traject.traject:
-                bezochte_stations.add(v.station1)
-                bezochte_stations.add(v.station2)
 
             self.netwerk.voeg_traject_toe(traject)
             trajecten += 1
@@ -38,15 +34,14 @@ class Netwerken:
         overgebleven_stations = self.stations_set.stations - bezochte_stations
         return random.choice(list(overgebleven_stations))
 
-    def voeg_verbindingen_toe(self, huidig_station, traject, gereden_verbindingen, bezochte_stations):
+    def voeg_verbindingen_toe(self, huidig_station, traject, gereden_verbindingen):
         
         opties = Opties(self.stations_set.stations, self.verbindingen_lijst)
         totale_tijd = 0
 
         while totale_tijd < self.tijdslimiet:
 
-            bezochte_stations.add(huidig_station)
-            volgende_station = opties.kies_opties(huidig_station, bezochte_stations, gereden_verbindingen)
+            volgende_station = opties.kies_opties(huidig_station, gereden_verbindingen)
             
             verbinding = self.verbindingen_lijst.zoek_verbinding(huidig_station, volgende_station)
             if verbinding:
@@ -58,13 +53,21 @@ class Netwerken:
             else:
                 break
 
-    def controleer_niet_bezochte_stations(self):
-        
-        bezochte_stations = set()
+    def controleer_niet_bezochte_verbindingen(self):
+        # Houd een set bij van bezochte verbindingen
+        bezochte_verbindingen = set()
         for traject in self.netwerk.netwerk:
             for verbinding in traject.traject:
-                bezochte_stations.add(verbinding.station1)
-                bezochte_stations.add(verbinding.station2)
+                # Voeg elke bezochte verbinding toe als een tuple (station1, station2)
+                bezochte_verbindingen.add((verbinding.station1, verbinding.station2))
+                bezochte_verbindingen.add((verbinding.station2, verbinding.station1))  # Beide richtingen
 
-        niet_bezochte_stations = self.stations_set.stations - bezochte_stations
-        return niet_bezochte_stations
+        # Maak een set van alle verbindingen
+        alle_verbindingen = set(
+            (v.station1, v.station2) for v in self.verbindingen_lijst.verbindingen
+        )
+
+        # Bereken de niet-bezochte verbindingen
+        niet_bezochte_verbindingen = alle_verbindingen - bezochte_verbindingen
+
+        return niet_bezochte_verbindingen

@@ -19,16 +19,14 @@ class Opties:
     def laad_opties(self, station):
         return self.opties.get(station, [])
     
-    def kies_opties(self, station, bezochte_stations, gereden_verbindingen):
+    def kies_opties(self, station, gereden_verbindingen):
         keuzes = self.opties.get(station, [])
         # Filter verbindingen die zijn gereden
-        ongebruikte_stations = [k for k in keuzes if k not in bezochte_stations]
-        if ongebruikte_stations:
-            keuze = random.choice(ongebruikte_stations)
-            # check = {keuze, station}
-            # gereden_verbindingen.add(check)
+        keuze = random.choice(keuzes)
+        check = frozenset({keuze, station})
+        if not check in gereden_verbindingen:
+            gereden_verbindingen.add(check)
             return keuze
         else:
-            keuze = random.choice(keuzes)
             return keuze
 
