@@ -7,6 +7,8 @@ from netwerk import *
 from traject import *
 from score import *
 
+import csv
+
 def main():
     set_stations = Stations('../../Data/StationsHolland.csv')
     verbindingen_lijst = Verbindingen()
@@ -14,23 +16,34 @@ def main():
     netwerken = Netwerken(set_stations, verbindingen_lijst)
     netwerk = netwerken.genereer_trajecten()
 
-    # Header voor de output
-    print("train,stations")
+    
+    output_data = []
 
+    
+    output_data.append(["train", "stations"])
+
+    # Genereer output per traject
     for traject in netwerk.netwerk:
-        print(f'train_{traject.traject_id},"[{", ".join(traject.bezochte_stations)}]"')
+        output_data.append([f'train_{traject.traject_id}', f'[{", ".join(traject.bezochte_stations)}]'])
 
     score_calculator = Score(netwerk)
     score = score_calculator.bereken_score()
-    print(f'Score: {score}')
+    output_data.append([f'Score', score])
 
-if __name__ == "__main__":
-    output_file = "output.csv"
-    with open(output_file, mode="w", newline="", encoding="utf-8") as file:
-        writer = csv.writer(file)
+    
+    return output_data
 
-        count = 0
-        while count < 10000:
-            data = main()  
-            writer.writerows(data)
-            count += 1
+
+output_file = "output.csv"
+with open(output_file, mode="w", newline="", encoding="utf-8") as file:
+    writer = csv.writer(file)
+
+    count = 0
+    while count < 10000:  
+        data = main() 
+        if data:  
+            writer.writerows(data)  
+        else:
+            print("Geen data om naar het bestand te schrijven.")
+        count += 1
+
