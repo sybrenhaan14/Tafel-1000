@@ -15,9 +15,6 @@ class Opties:
                     self.opties[station].append(v.station2)
                 if v.station2 == station:
                     self.opties[station].append(v.station1)
-
-    def laad_opties(self, station):
-        return self.opties.get(station, [])
     
     def kies_opties(self, station, gereden_verbindingen):
         keuzes = self.opties.get(station, [])

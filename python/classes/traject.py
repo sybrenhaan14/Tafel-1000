@@ -23,11 +23,3 @@ class Traject:
             # Voeg station2 toe als het nog niet is toegevoegd
             if verbinding.station2 not in self.bezochte_stations:
                 self.bezochte_stations.append(verbinding.station2)
-
-    def bereken_totale_tijd(self):
-        # checkt totale tijd
-        return self.totale_tijd
-    
-    def is_volledig(self, tijdslimiet=120):
-        #Controleer of het traject de tijdslimiet overschrijdt
-        return self.totale_tijd > tijdslimiet

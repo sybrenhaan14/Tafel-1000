@@ -39,7 +39,7 @@ with open(output_file, mode="w", newline="", encoding="utf-8") as file:
     writer = csv.writer(file)
 
     count = 0
-    while count < 10000:  
+    while count < 1:  
         data = main() 
         if data:  
             writer.writerows(data)  
