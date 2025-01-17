@@ -2,9 +2,6 @@ import random
 from netwerk import *
 from opties import *
 from traject import *
-from verbindingen import *
-from stations import *
-
 
 class Netwerken:
     def __init__(self, stations_set, verbindingen_lijst, max_trajecten=7, tijdslimiet=120):
@@ -14,47 +11,50 @@ class Netwerken:
         self.tijdslimiet = tijdslimiet
         self.netwerk = Netwerk()
 
-    def genereer_trajecten(self, stations, verbindingen):
-        netwerk = Netwerk()
+    def genereer_trajecten(self):
+        
+        bezochte_stations = set() 
+        gereden_verbindingen = set()
         trajecten = 0
 
-        while not netwerk.alle_verbindingen_bereikt(verbindingen):
+        while trajecten < self.max_trajecten and len(bezochte_stations) < len(self.stations_set.stations):
             traject = Traject(trajecten + 1)
-            start_station = self.kies_startstation()
-            # Voeg verbindingen toe aan het traject
-            huidig_station = start_station
-            bereden_verbindingen = set()
+            start_station = self.kies_startstation(bezochte_stations)
+            self.stations_set.eerder_bezocht(start_station)  
+            self.voeg_verbindingen_toe(start_station, traject, gereden_verbindingen, bezochte_stations)
 
-            # Voeg verbindingen toe tot het traject de tijdslimiet overschrijdt of alle verbindingen zijn bereden
-            self.voeg_verbindingen_toe(huidig_station, traject, bereden_verbindingen)
+            
+            for v in traject.traject:
+                bezochte_stations.add(v.station1)
+                bezochte_stations.add(v.station2)
 
-            # Voeg het traject toe aan het netwerk
-            netwerk.voeg_traject_toe(traject)
+            self.netwerk.voeg_traject_toe(traject)
+            trajecten += 1
+
         return self.netwerk
 
-    def kies_startstation(self):
-        return random.choice(list(self.stations_set.stations))
+    def kies_startstation(self, bezochte_stations):
 
-    def voeg_verbindingen_toe(self, huidig_station, traject, bereden_verbindingen):
+        overgebleven_stations = self.stations_set.stations - bezochte_stations
+        return random.choice(list(overgebleven_stations))
+
+    def voeg_verbindingen_toe(self, huidig_station, traject, gereden_verbindingen, bezochte_stations):
         
         opties = Opties(self.stations_set.stations, self.verbindingen_lijst)
         totale_tijd = 0
 
         while totale_tijd < self.tijdslimiet:
-            volgende_verbinding, volgend_station = opties.kies_opties(huidig_station)
-            bereden_verbindingen.add(volgende_verbinding)
-            
-            if volgende_verbinding in bereden_verbindingen:
-                break
 
+            bezochte_stations.add(huidig_station)
+            volgende_station = opties.kies_opties(huidig_station, bezochte_stations, gereden_verbindingen)
             
-            verbinding = volgende_verbinding
+            verbinding = self.verbindingen_lijst.zoek_verbinding(huidig_station, volgende_station)
             if verbinding:
                 if totale_tijd + verbinding.tijd > self.tijdslimiet:
                     break  
-                Traject.traject.voeg_verbinding_toe(verbinding)
+                traject.voeg_verbinding_toe(verbinding)
                 totale_tijd += verbinding.tijd
-                huidig_station = volgend_station
+                huidig_station = volgende_station
             else:
                 break
 

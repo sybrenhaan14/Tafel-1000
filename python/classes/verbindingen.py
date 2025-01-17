@@ -4,8 +4,8 @@ from verbinding import *
 class Verbindingen:
     def __init__(self):
         self.verbindingen = []
+        self.gereden_verbindingen = set()
         self.laad_verbindingen('../../Data/ConnectiesHolland.csv')
-        self.bereden_verbindingen = set()
 
     def laad_verbindingen(self, bestand):
         # Lees de verbindingen uit een CSV bestand en sla ze op als Verbinding objecten
@@ -22,8 +22,3 @@ class Verbindingen:
                 (v.station2 == station1 and v.station1 == station2)),
             None
         )
-    def wordt_bereden(self, verbinding):
-        self.bereden_verbindingen.add((verbinding.station1, verbinding.station2))
-
-    def is_gereden(self, verbinding):
-        return (verbinding.station1, verbinding.station2) in self.bereden_verbindingen

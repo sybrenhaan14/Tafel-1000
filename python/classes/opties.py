@@ -19,11 +19,16 @@ class Opties:
     def laad_opties(self, station):
         return self.opties.get(station, [])
     
-    def kies_opties(self, station):
-        while(True):
-            keuzes = self.opties.get(station, [])
+    def kies_opties(self, station, bezochte_stations, gereden_verbindingen):
+        keuzes = self.opties.get(station, [])
+        # Filter verbindingen die zijn gereden
+        ongebruikte_stations = [k for k in keuzes if k not in bezochte_stations]
+        if ongebruikte_stations:
+            keuze = random.choice(ongebruikte_stations)
+            # check = {keuze, station}
+            # gereden_verbindingen.add(check)
+            return keuze
+        else:
             keuze = random.choice(keuzes)
-            gekozen_verbinding = self.verbindingen.zoek_verbinding(station, keuze)
-            if not gekozen_verbinding in self.verbindingen.bereden_verbindingen:
-                return gekozen_verbinding, keuze
+            return keuze
 
