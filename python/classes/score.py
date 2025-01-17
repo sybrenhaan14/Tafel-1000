@@ -10,7 +10,7 @@ class Score:
         if aantal_bereden_verbindingen == 0:  # Om deling door 0 te voorkomen
             score = 0
         else:
-            score = (28 / aantal_bereden_verbindingen) * 10000 - (aantal_trajecten * 100 + Min)
+            score = (aantal_bereden_verbindingen / 28 ) * 10000 - (aantal_trajecten * 100 + Min)
 
         return score
 
