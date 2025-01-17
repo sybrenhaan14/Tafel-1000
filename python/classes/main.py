@@ -6,6 +6,7 @@ from verbinding import *
 from netwerk import *
 from traject import *
 from score import *
+import os 
 
 import csv
 
@@ -35,12 +36,26 @@ def main():
 
 
 
-data, score = main()
-if data:
-    output_file = f"holland_{score}.csv"  # Bestandsnaam gebaseerd op de score
-    with open(output_file, mode="w", newline="", encoding="utf-8") as file:
-        writer = csv.writer(file)
-        writer.writerows(data)
-else:
-    print("Geen data om naar het bestand te schrijven.")
 
+def simulatie():
+    
+    output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Data', 'outputs')
+
+    
+    for count in range(1, 100000):  
+        
+        data, score = main()
+
+        if data:
+            
+            output_file = os.path.join(output_dir, f"holland_{score}.csv")
+
+            
+            with open(output_file, mode="w", newline="", encoding="utf-8") as file:
+                writer = csv.writer(file)
+                writer.writerows(data)
+        else:
+            print(f"Geen data om naar het bestand te schrijven voor simulatie {count}")
+
+
+simulatie()
