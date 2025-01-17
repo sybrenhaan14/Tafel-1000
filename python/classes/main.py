@@ -28,7 +28,7 @@ def main():
 
     score_calculator = Score(netwerk)
     score = score_calculator.bereken_score()
-    output_data.append([f'Score', score])
+    output_data.append([f'score', score])
 
     
     return output_data
