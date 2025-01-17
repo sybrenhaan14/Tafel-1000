@@ -39,11 +39,12 @@ def main():
 
 def simulatie():
     
-    output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Data', 'outputs')
-
+    output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Data', 'extra_outputs')
+    count = 0
     
-    for count in range(1, 100000):  
-        
+    for count in range(1, 50000):  
+        print(count)
+        count =+ 1
         data, score = main()
 
         if data:
