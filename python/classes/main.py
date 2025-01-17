@@ -31,19 +31,16 @@ def main():
     output_data.append([f'score', score])
 
     
-    return output_data
+    return output_data, score 
 
 
-output_file = "output.csv"
-with open(output_file, mode="w", newline="", encoding="utf-8") as file:
-    writer = csv.writer(file)
 
-    count = 0
-    while count < 1:  
-        data = main() 
-        if data:  
-            writer.writerows(data)  
-        else:
-            print("Geen data om naar het bestand te schrijven.")
-        count += 1
+data, score = main()
+if data:
+    output_file = f"holland_{score}.csv"  # Bestandsnaam gebaseerd op de score
+    with open(output_file, mode="w", newline="", encoding="utf-8") as file:
+        writer = csv.writer(file)
+        writer.writerows(data)
+else:
+    print("Geen data om naar het bestand te schrijven.")
 
