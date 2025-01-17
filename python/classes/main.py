@@ -25,12 +25,12 @@ def main():
     print(f'Score: {score}')
 
 if __name__ == "__main__":
-    main()
-    # with open(output_file, mode="w", newline="", encoding="utf-8") as file:
-    #     writer = csv.writer(file)
+    output_file = "output.csv"
+    with open(output_file, mode="w", newline="", encoding="utf-8") as file:
+        writer = csv.writer(file)
 
-    #     count = 0
-    #     while count < 10000:
-    #         data = main()  
-    #         writer.writerows(data)
-    #         count += 1
+        count = 0
+        while count < 10000:
+            data = main()  
+            writer.writerows(data)
+            count += 1
