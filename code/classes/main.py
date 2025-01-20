@@ -31,8 +31,8 @@ class Main:
             output_data.append([f'train_{traject.traject_id}', f'[{", ".join(traject.bezochte_stations)}]'])
 
         # Bereken de score van het netwerk en voeg deze toe aan de output
-        score_calculator = Score(netwerk)
-        score = score_calculator.bereken_score()
+        score_uitrekenen = Score(netwerk)
+        score = score_uitrekenen.bereken_score()
         output_data.append([f'score', score])
 
         
@@ -56,10 +56,10 @@ class Main:
             if data:
                 
                 # Maakt csv bestand aan 
-                output_file = os.path.join(output_dir, f"holland_{score}.csv")
+                output_bestand = os.path.join(output_dir, f"holland_{score}.csv")
 
                 # Opent csv bestand en schrijft de uitkomst (netwerk) in het bestand.
-                with open(output_file, mode="w", newline="", encoding="utf-8") as file:
+                with open(output_bestand, mode="w", newline="", encoding="utf-8") as file:
                     writer = csv.writer(file)
                     writer.writerows(data)
             else:
