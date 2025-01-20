@@ -1,6 +1,6 @@
 import random
 from netwerk import *
-from opties import *
+from random import *
 from traject import *
 
 class Netwerken:

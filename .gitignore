@@ -171,7 +171,3 @@ cython_debug/
 .pypirc
 
 
-
-.vscode
-nl_regions.geojson:Zone.Identifier
-nl_regions.geojson
