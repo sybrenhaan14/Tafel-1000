@@ -8,8 +8,11 @@ class Verbinding:
 
 class Verbindingen:
     def __init__(self):
+        # maakt een lijst voor de verbindingen
         self.verbindingen = []
+        # maakt een set voor de gereden verbindingen
         self.gereden_verbindingen = set()
+        # laad de verbindingen in de lijst
         self.laad_verbindingen('../../Data/ConnectiesHolland.csv')
 
     def laad_verbindingen(self, bestand):
@@ -21,6 +24,7 @@ class Verbindingen:
                 self.verbindingen.append(verbinding)
 
     def zoek_verbinding(self, station1, station2):
+        # kijkt naar of er een echte verbinding is tussen de twee stations
         return next(
             (v for v in self.verbindingen 
              if (v.station1 == station1 and v.station2 == station2) or 
