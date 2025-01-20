@@ -2,10 +2,7 @@ import random
 from stations import *
 from verbindingen import *
 from netwerken import *
-from verbinding import *
-from netwerk import *
 from traject import *
-from score import *
 import os 
 
 import csv
