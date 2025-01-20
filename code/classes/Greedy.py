@@ -1,4 +1,5 @@
 from verbindingen import *
+import random
 
 class Opties:
     def __init__(self, stations_set, verbindingen):
