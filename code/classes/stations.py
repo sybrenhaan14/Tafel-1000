@@ -31,6 +31,11 @@ class Stations:
                 station_dict[verbinding.station1].opties.append(verbinding.station2)
             if verbinding.station2 in station_dict:
                 station_dict[verbinding.station2].opties.append(verbinding.station1)
+    
+    def geef_opties(self, station_naam):
+        for station in self.stations:
+            if station.naam == station_naam:
+                return station.opties
 
     def is_bezocht(self, station):
         self.bezochte_stations.add(station)
