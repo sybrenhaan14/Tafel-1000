@@ -1,9 +1,19 @@
 import random
-from netwerk import *
 from random import *
 from traject import *
 from stations import *
 from random import *
+
+class Netwerk:
+    def __init__(self):
+        # for aantal voeg traject toe en maak nieuw traject
+        self.netwerk = []
+
+    def voeg_traject_toe(self, traject):
+        self.netwerk.append(traject)
+
+    def alle_verbindingen_bereikt(self, verbindingen):
+        return len(verbindingen.bereden_verbindingen) == len(verbindingen.verbindingen)
 
 class Netwerken:
     def __init__(self, stations_set, verbindingen_lijst, max_trajecten=7, tijdslimiet=120):
