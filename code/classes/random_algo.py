@@ -18,15 +18,5 @@ class Opties:
     
     def kies_opties_random(self, station, gereden_verbindingen):
         keuzes = self.opties.get(station, [])
-        # Filter verbindingen die zijn gereden
-        beschikbare_keuzes = [
-            keuze for keuze in keuzes 
-            if frozenset({keuze, station}) not in gereden_verbindingen
-        ]
-
-        if not beschikbare_keuzes:
-            return random.choice(keuzes)
-        
-        keuze = random.choice(beschikbare_keuzes)
+        keuze = random.choice(keuzes)
         return keuze
-
