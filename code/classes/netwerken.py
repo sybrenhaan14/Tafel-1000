@@ -50,13 +50,16 @@ class Netwerken:
     # Voegt verbindingen toe aan traject todat de tijdslimiet is bereikt
     def voeg_verbindingen_toe(self, huidig_station, traject):
         
-        opties = Opties(self.stations_set.stations, self.verbindingen_lijst) # Mogelijke verbindingen
+
         totale_tijd = 0 #houd te tijd bij
 
         while totale_tijd < self.tijdslimiet:
-            print(f"Beschikbare opties voor {huidig_station}: {opties.opties.get(huidig_station)}")  # Debugging output
+           
             # Kiest volgend station en voegt verbinding toe 
-            volgende_station = opties.kies_opties_random(huidig_station)
+            print(huidig_station.naam)
+            opties_huidig_station = self.stations_set.geef_opties(huidig_station)
+            print(opties_huidig_station)
+            volgende_station = kies_opties_random(opties_huidig_station)
             verbinding = self.verbindingen_lijst.zoek_verbinding(huidig_station, volgende_station)
 
             if verbinding:
