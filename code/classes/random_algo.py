@@ -16,14 +16,17 @@ class Opties:
                 if v.station2 == station:
                     self.opties[station].append(v.station1)
     
-    def kies_opties(self, station, gereden_verbindingen):
+    def kies_opties_random(self, station, gereden_verbindingen):
         keuzes = self.opties.get(station, [])
         # Filter verbindingen die zijn gereden
-        keuze = random.choice(keuzes)
-        check = frozenset({keuze, station})
-        if not check in gereden_verbindingen:
-            gereden_verbindingen.add(check)
-            return keuze
-        else:
-            return keuze
+        beschikbare_keuzes = [
+            keuze for keuze in keuzes 
+            if frozenset({keuze, station}) not in gereden_verbindingen
+        ]
+
+        if not beschikbare_keuzes:
+            return random.choice(keuzes)
+        
+        keuze = random.choice(beschikbare_keuzes)
+        return keuze
 

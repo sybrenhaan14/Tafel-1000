@@ -29,7 +29,7 @@ class Stations:
         # maak een dict voor het snelle opzoeken van de stations op naam
         station_dict = {station.naam: station for station in self.stations}
         # loop door de verbindingen en voeg alle opties toe aan de list van opties
-        for verbinding in self.verbindingen:
+        for verbinding in self.verbindingen.verbindingen:
             if verbinding.station1 in station_dict:
                 station_dict[verbinding.station1].opties.append(verbinding.station2)
             if verbinding.station2 in station_dict:
@@ -40,11 +40,3 @@ class Stations:
         for station in self.stations:
             if station.naam == station_naam:
                 return station.opties
-
-    def is_bezocht(self, station):
-        # voeg het station toe aan de set bezochte station
-        self.bezochte_stations.add(station)
-
-    def eerder_bezocht(self, station):
-        # kijk of het station al is eerder bezocht of niet
-        return station in self.bezochte_stations

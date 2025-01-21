@@ -1,8 +1,7 @@
 import random
-from random import *
+from random_algo import *
 from traject import *
 from stations import *
-from random import *
 
 # Klasse om netwerk van trajecten te beheren
 class Netwerk:
@@ -30,14 +29,12 @@ class Netwerken:
     # Genereert een netwerk met trajecten
     def genereer_trajecten(self):
         
-        bezochte_stations = set() 
         gereden_verbindingen = set()
         trajecten = 0
 
         while trajecten < self.max_trajecten:
             traject = Traject(trajecten + 1)
-            start_station = self.kies_startstation(bezochte_stations)
-            self.stations_set.eerder_bezocht(start_station)  
+            start_station = self.kies_startstation()
             self.voeg_verbindingen_toe(start_station, traject, gereden_verbindingen)
 
             # Voegt traject toe aan netwerk
@@ -47,10 +44,8 @@ class Netwerken:
         return self.netwerk
 
     # Kiest een station dat nog niet eerder is bezocht
-    def kies_startstation(self, bezochte_stations):
-
-        overgebleven_stations = self.stations_set.stations - bezochte_stations
-        return random.choice(list(overgebleven_stations))
+    def kies_startstation(self,):
+        return random.choice(self.stations_set.stations)
 
     # Voegt verbindingen toe aan traject todat de tijdslimiet is bereikt
     def voeg_verbindingen_toe(self, huidig_station, traject, gereden_verbindingen):
@@ -61,7 +56,7 @@ class Netwerken:
         while totale_tijd < self.tijdslimiet:
 
             # Kiest volgend station en voegt verbinding toe 
-            volgende_station = opties.kies_opties(huidig_station, gereden_verbindingen)
+            volgende_station = opties.kies_opties_random(huidig_station, gereden_verbindingen)
             verbinding = self.verbindingen_lijst.zoek_verbinding(huidig_station, volgende_station)
 
             if verbinding:

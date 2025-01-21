@@ -15,11 +15,12 @@ class Main:
     def main(self):
 
         # Initialiseer stations en verbindingen
-        set_stations = Stations('../../Data/StationsHolland.csv')
         verbindingen_lijst = Verbindingen()
+        lijst_stations = Stations('../../Data/StationsHolland.csv', verbindingen_lijst)
+        
 
         # Creëer een netwerk met trajecten
-        netwerken = Netwerken(set_stations, verbindingen_lijst)
+        netwerken = Netwerken(lijst_stations, verbindingen_lijst)
         netwerk = netwerken.genereer_trajecten()
 
         # Voorbereiden van gegevens voor CSV-output
