@@ -1,9 +1,0 @@
-train,stations
-train_1,"[Leiden Centraal, Schiphol Airport, Heemstede-Aerdenhout, Alphen a/d Rijn, Amsterdam Zuid]"
-train_2,"[Amsterdam Amstel, Amsterdam Centraal, Amsterdam Zuid, Schiphol Airport, Leiden Centraal, Heemstede-Aerdenhout, Haarlem]"
-train_3,"[Amsterdam Amstel, Amsterdam Centraal, Amsterdam Sloterdijk, Amsterdam Zuid, Schiphol Airport]"
-train_4,"[Gouda, Alphen a/d Rijn, Rotterdam Alexander, Rotterdam Centraal]"
-train_5,"[Haarlem, Beverwijk, Heemstede-Aerdenhout, Leiden Centraal]"
-train_6,"[Schiedam Centrum, Delft, Den Haag Centraal, Rotterdam Centraal, Dordrecht]"
-train_7,"[Amsterdam Zuid, Amsterdam Sloterdijk, Zaandam, Castricum, Alkmaar, Beverwijk, Haarlem]"
-score,1462.0

@@ -1,9 +1,0 @@
-train,stations
-train_1,"[Alkmaar, Den Helder, Hoorn]"
-train_2,"[Alkmaar, Hoorn]"
-train_3,"[Dordrecht, Rotterdam Centraal, Schiedam Centrum]"
-train_4,"[Heemstede-Aerdenhout, Haarlem, Leiden Centraal, Alphen a/d Rijn, Gouda]"
-train_5,"[Heemstede-Aerdenhout, Haarlem, Beverwijk, Castricum, Zaandam]"
-train_6,"[Leiden Centraal, Alphen a/d Rijn, Heemstede-Aerdenhout, Haarlem]"
-train_7,"[Gouda, Alphen a/d Rijn, Leiden Centraal, Rotterdam Alexander, Rotterdam Centraal]"
-score,1511.0
