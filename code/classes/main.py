@@ -35,6 +35,8 @@ class Main:
         score = score_uitrekenen.bereken_score()
         output_data.append([f'score', score])
 
+        print("Output Data:", output_data)
+        print("Score:", score)
         
         return output_data, score 
 
