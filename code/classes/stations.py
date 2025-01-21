@@ -44,7 +44,6 @@ class Stations:
 # verbindingen = Verbindingen()
 # stations_obj = Stations('/mnt/c/Users/sybre/OneDrive/Documenten/Minor_prog/A_H/Tafel-1000/Data/StationsHolland.csv', verbindingen)
 
-# # Print de opties van een specifiek station (bijv. 'StationA')
 # station_naam = 'Zaandam'
 # opties = stations_obj.geef_opties(station_naam)
 # print(type(opties))

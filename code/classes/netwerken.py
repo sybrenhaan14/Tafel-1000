@@ -56,9 +56,7 @@ class Netwerken:
         while totale_tijd < self.tijdslimiet:
            
             # Kiest volgend station en voegt verbinding toe 
-            print(huidig_station.naam)
-            opties_huidig_station = self.stations_set.geef_opties(huidig_station)
-            print(opties_huidig_station)
+            opties_huidig_station = self.stations_set.geef_opties(huidig_station.naam)
             volgende_station = kies_opties_random(opties_huidig_station)
             verbinding = self.verbindingen_lijst.zoek_verbinding(huidig_station, volgende_station)
 

@@ -16,11 +16,10 @@ class Main:
 
         # Initialiseer stations en verbindingen
         verbindingen_lijst = Verbindingen()
-        lijst_stations = Stations('../../Data/StationsHolland.csv', verbindingen_lijst)
-        
+        station_lijst = Stations('../../Data/StationsHolland.csv', verbindingen_lijst)
 
         # Creëer een netwerk met trajecten
-        netwerken = Netwerken(lijst_stations, verbindingen_lijst)
+        netwerken = Netwerken(station_lijst, verbindingen_lijst)
         netwerk = netwerken.genereer_trajecten()
 
         # Voorbereiden van gegevens voor CSV-output
@@ -43,7 +42,7 @@ class Main:
     def simulatie(self):
         
         # maakt de output directory
-        output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Data', 'extra_outputs')
+        output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Data', 'extra_outputs', 'check')
         count = 0
         
         # Voert de simulatie x aantal keer uit 
