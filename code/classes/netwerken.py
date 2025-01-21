@@ -60,15 +60,12 @@ class Netwerken:
             volgende_station = kies_opties_random(opties_huidig_station)
             verbinding = self.verbindingen_lijst.zoek_verbinding(huidig_station.naam, volgende_station.naam)
 
-            if verbinding:
-                # Checkt of de tijdslimiet wordt overstreden
-                if totale_tijd + verbinding.tijd > self.tijdslimiet:
-                    break  
-                traject.voeg_verbinding_toe(verbinding) # Voegt de verbinding toe aan traject
-                totale_tijd += verbinding.tijd # Update totale_tijd
-                huidig_station = volgende_station # Gaat naar volgend station
-            else:
-                break
+            # Checkt of de tijdslimiet wordt overstreden
+            if totale_tijd + verbinding.tijd > self.tijdslimiet:
+                break  
+            traject.voeg_verbinding_toe(verbinding) # Voegt de verbinding toe aan traject
+            totale_tijd += verbinding.tijd # Update totale_tijd
+
 
     # Controleert welke verbindingen nog niet zijn bezocht
     def controleer_niet_bezochte_verbindingen(self):
