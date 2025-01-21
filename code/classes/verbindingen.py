@@ -6,6 +6,10 @@ class Verbinding:
         self.station2 = station2
         self.tijd = int(tijd)
 
+    def __repr__(self):
+        # De string die de verbinding beschrijft
+        return f"Verbinding({self.station1} <-> {self.station2}, Tijd: {self.tijd})"
+
 class Verbindingen:
     def __init__(self):
         # maakt een lijst voor de verbindingen

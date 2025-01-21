@@ -1,9 +1,0 @@
-train,stations
-train_1,"[Gouda, Alphen a/d Rijn]"
-train_2,"[Rotterdam Centraal, Schiedam Centrum, Rotterdam Alexander, Dordrecht]"
-train_3,"[Dordrecht, Rotterdam Centraal, Schiedam Centrum, Rotterdam Alexander]"
-train_4,"[Dordrecht, Rotterdam Centraal, Schiedam Centrum, Delft]"
-train_5,"[Dordrecht, Rotterdam Centraal, Rotterdam Alexander, Schiedam Centrum]"
-train_6,"[Amsterdam Amstel, Amsterdam Centraal, Amsterdam Zuid, Schiphol Airport, Leiden Centraal, Heemstede-Aerdenhout, Haarlem]"
-train_7,"[Schiedam Centrum, Delft, Rotterdam Centraal, Rotterdam Alexander, Dordrecht]"
-score,1567.0

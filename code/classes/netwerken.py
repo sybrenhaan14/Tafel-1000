@@ -58,7 +58,7 @@ class Netwerken:
             # Kiest volgend station en voegt verbinding toe 
             opties_huidig_station = self.stations_set.geef_opties(huidig_station.naam)
             volgende_station = kies_opties_random(opties_huidig_station)
-            verbinding = self.verbindingen_lijst.zoek_verbinding(huidig_station, volgende_station)
+            verbinding = self.verbindingen_lijst.zoek_verbinding(huidig_station.naam, volgende_station.naam)
 
             if verbinding:
                 # Checkt of de tijdslimiet wordt overstreden

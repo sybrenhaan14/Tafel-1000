@@ -9,7 +9,7 @@ import csv
 class Main:
     def __init__(self):
         # Start de simulatie direct bij init
-        self.main()
+        self.simulatie()
 
      # Het netwerk wordt opgebouwd en de resultaten worden gegenereerd
     def main(self):
@@ -35,8 +35,8 @@ class Main:
         score = score_uitrekenen.bereken_score()
         output_data.append([f'score', score])
 
-        print("Output Data:", output_data)
-        print("Score:", score)
+        # print("Output Data:", output_data)
+        # print("Score:", score)
         
         return output_data, score 
 
@@ -44,11 +44,11 @@ class Main:
     def simulatie(self):
         
         # maakt de output directory
-        output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Data', 'extra_outputs', 'check')
+        output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Data', 'extra_outputs')
         count = 0
         
         # Voert de simulatie x aantal keer uit 
-        for count in range(1, 10):  
+        for count in range(1, 100000):  
             print(count) # Houd bij bij welke itteratie we zijn 
             count =+ 1
 
@@ -67,5 +67,4 @@ class Main:
             else:
                 # Meld als er geen data wordt gegenereerd 
                 print(f"Geen data om naar het bestand te schrijven voor simulatie {count}")
-
-print(Main())
+Main()

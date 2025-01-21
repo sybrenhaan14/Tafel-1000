@@ -31,9 +31,9 @@ class Stations:
         # loop door de verbindingen en voeg alle opties toe aan de list van opties
         for verbinding in self.verbindingen.verbindingen:
             if verbinding.station1 in station_dict:
-                station_dict[verbinding.station1].opties.append(verbinding.station2)
+                station_dict[verbinding.station1].opties.append(station_dict[verbinding.station2])
             if verbinding.station2 in station_dict:
-                station_dict[verbinding.station2].opties.append(verbinding.station1)
+                station_dict[verbinding.station2].opties.append(station_dict[verbinding.station1])
     
     def geef_opties(self, station_naam):
         # geef de opties voor het opgegeven station
