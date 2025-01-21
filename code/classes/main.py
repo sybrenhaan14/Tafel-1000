@@ -9,7 +9,7 @@ import csv
 class Main:
     def __init__(self):
         # Start de simulatie direct bij init
-        self.simulatie()
+        self.main()
 
      # Het netwerk wordt opgebouwd en de resultaten worden gegenereerd
     def main(self):
@@ -66,5 +66,4 @@ class Main:
                 # Meld als er geen data wordt gegenereerd 
                 print(f"Geen data om naar het bestand te schrijven voor simulatie {count}")
 
-
-Main()
+print(Main())
