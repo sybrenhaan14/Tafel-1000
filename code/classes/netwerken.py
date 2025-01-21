@@ -35,7 +35,7 @@ class Netwerken:
         while trajecten < self.max_trajecten:
             traject = Traject(trajecten + 1)
             start_station = self.kies_startstation()
-            self.voeg_verbindingen_toe(start_station, traject, gereden_verbindingen)
+            self.voeg_verbindingen_toe(start_station, traject)
 
             # Voegt traject toe aan netwerk
             self.netwerk.voeg_traject_toe(traject)
@@ -48,15 +48,15 @@ class Netwerken:
         return random.choice(self.stations_set.stations)
 
     # Voegt verbindingen toe aan traject todat de tijdslimiet is bereikt
-    def voeg_verbindingen_toe(self, huidig_station, traject, gereden_verbindingen):
+    def voeg_verbindingen_toe(self, huidig_station, traject):
         
         opties = Opties(self.stations_set.stations, self.verbindingen_lijst) # Mogelijke verbindingen
         totale_tijd = 0 #houd te tijd bij
 
         while totale_tijd < self.tijdslimiet:
-
+            print(f"Beschikbare opties voor {huidig_station}: {opties.opties.get(huidig_station)}")  # Debugging output
             # Kiest volgend station en voegt verbinding toe 
-            volgende_station = opties.kies_opties_random(huidig_station, gereden_verbindingen)
+            volgende_station = opties.kies_opties_random(huidig_station)
             verbinding = self.verbindingen_lijst.zoek_verbinding(huidig_station, volgende_station)
 
             if verbinding:
