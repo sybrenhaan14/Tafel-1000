@@ -1,0 +1,9 @@
+train,stations
+train_1,"[Amsterdam Amstel, Amsterdam Centraal, Amsterdam Sloterdijk]"
+train_2,"[Rotterdam Centraal, Rotterdam Alexander, Schiedam Centrum, Dordrecht]"
+train_3,"[Schiedam Centrum, Delft, Rotterdam Centraal]"
+train_4,"[Amsterdam Amstel, Amsterdam Centraal, Amsterdam Sloterdijk]"
+train_5,"[Rotterdam Alexander, Gouda, Rotterdam Centraal]"
+train_6,"[Rotterdam Alexander, Gouda, Rotterdam Centraal]"
+train_7,"[Amsterdam Centraal, Amsterdam Sloterdijk, Amsterdam Amstel]"
+score,1680.0

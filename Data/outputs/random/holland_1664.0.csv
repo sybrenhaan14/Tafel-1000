@@ -1,0 +1,9 @@
+train,stations
+train_1,"[Rotterdam Alexander, Gouda, Rotterdam Centraal]"
+train_2,"[Amsterdam Amstel, Amsterdam Centraal, Amsterdam Zuid]"
+train_3,"[Leiden Centraal, Heemstede-Aerdenhout, Haarlem]"
+train_4,"[Rotterdam Centraal, Rotterdam Alexander, Gouda]"
+train_5,"[Zaandam, Hoorn]"
+train_6,"[Rotterdam Alexander, Gouda, Rotterdam Centraal]"
+train_7,"[Leiden Centraal, Heemstede-Aerdenhout, Haarlem]"
+score,1664.0

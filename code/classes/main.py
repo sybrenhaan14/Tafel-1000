@@ -44,11 +44,11 @@ class Main:
     def simulatie(self):
         
         # maakt de output directory
-        output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Data', 'outputs', 'test')
+        output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Data', 'outputs', 'random')
         count = 0
         
         # Voert de simulatie x aantal keer uit 
-        for count in range(1, 1000):  
+        for count in range(1, 1000000):  
             print(count) # Houd bij bij welke itteratie we zijn 
             count =+ 1
 
