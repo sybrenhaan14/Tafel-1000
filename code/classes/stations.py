@@ -26,15 +26,34 @@ class Stations:
         return stations_list
     
     def vul_opties_in(self):
-        # maak een dict voor het snelle opzoeken van de stations op naam
+        # Maak een dictionary voor snelle opzoek van stations op naam
         station_dict = {station.naam: station for station in self.stations}
-        # loop door de verbindingen en voeg alle opties toe aan de list van opties
+
+        # Maak een dictionary met reistijden tussen stations
+        verbindingen_dict = {
+            (verbinding.station1, verbinding.station2): verbinding.tijd
+            for verbinding in self.verbindingen.verbindingen
+        }
+        verbindingen_dict.update({
+            (verbinding.station2, verbinding.station1): verbinding.tijd
+            for verbinding in self.verbindingen.verbindingen
+        })
+
+        # Loop door de verbindingen en voeg alle opties toe aan de lijst van opties
         for verbinding in self.verbindingen.verbindingen:
-            if verbinding.station1 in station_dict:
-                station_dict[verbinding.station1].opties.append(station_dict[verbinding.station2])
-            if verbinding.station2 in station_dict:
-                station_dict[verbinding.station2].opties.append(station_dict[verbinding.station1])
-    
+            if verbinding.station1 in station_dict and verbinding.station2 in station_dict:
+                station1 = station_dict[verbinding.station1]
+                station2 = station_dict[verbinding.station2]
+
+                # Voeg station2 als optie toe aan station1
+                station1.opties.append(station2)
+                # Voeg station1 als optie toe aan station2
+                station2.opties.append(station1)
+
+        # Sorteer de opties op reistijd voor elk station
+        for station in self.stations:
+            station.opties.sort(key=lambda optie: verbindingen_dict.get((station.naam, optie.naam), float('inf')))
+
     def geef_opties(self, station_naam):
         # geef de opties voor het opgegeven station
         for station in self.stations:

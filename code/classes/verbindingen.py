@@ -11,13 +11,13 @@ class Verbinding:
         return f"Verbinding({self.station1} <-> {self.station2}, Tijd: {self.tijd})"
 
 class Verbindingen:
-    def __init__(self):
+    def __init__(self, pad):
         # maakt een lijst voor de verbindingen
         self.verbindingen = []
         # maakt een set voor de gereden verbindingen
         self.gereden_verbindingen = set()
         # laad de verbindingen in de lijst
-        self.laad_verbindingen('../../Data/ConnectiesHolland.csv')
+        self.laad_verbindingen(pad)
 
     def laad_verbindingen(self, bestand):
         # Lees de verbindingen uit een CSV bestand en sla ze op als Verbinding objecten

@@ -2,6 +2,7 @@ import random
 from random_algo import *
 from traject import *
 from stations import *
+from Greedy import *
 
 # Klasse om netwerk van trajecten te beheren
 class Netwerk:
@@ -27,7 +28,7 @@ class Netwerken:
         self.netwerk = Netwerk()
 
     # Genereert een netwerk met trajecten
-    def genereer_trajecten(self):
+    def genereer_trajecten(self, algo):
         
         gereden_verbindingen = set()
         trajecten = 0
@@ -35,7 +36,7 @@ class Netwerken:
         while trajecten < self.max_trajecten:
             traject = Traject(trajecten + 1)
             start_station = self.kies_startstation()
-            self.voeg_verbindingen_toe(start_station, traject)
+            self.voeg_verbindingen_toe(start_station, traject, gereden_verbindingen, algo)
 
             # Voegt traject toe aan netwerk
             self.netwerk.voeg_traject_toe(traject)
@@ -44,11 +45,12 @@ class Netwerken:
         return self.netwerk
 
     # Kiest een station dat nog niet eerder is bezocht
-    def kies_startstation(self,):
-        return random.choice(self.stations_set.stations)
+    def kies_startstation(self, algo):
+        if algo == 'R':
+            return random.choice(self.stations_set.stations)
 
     # Voegt verbindingen toe aan traject todat de tijdslimiet is bereikt
-    def voeg_verbindingen_toe(self, huidig_station, traject):
+    def voeg_verbindingen_toe(self, huidig_station, traject, gereden_verbindingen, algo):
         
 
         totale_tijd = 0 #houd te tijd bij
@@ -57,7 +59,10 @@ class Netwerken:
            
             # Kiest volgend station en voegt verbinding toe 
             opties_huidig_station = self.stations_set.geef_opties(huidig_station.naam)
-            volgende_station = kies_opties_random(opties_huidig_station)
+            if algo == 'R':
+                volgende_station = kies_opties_random(opties_huidig_station)
+            if algo == 'G':
+                volgende_station = kies_opties_greedy(opties_huidig_station, huidig_station.naam, gereden_verbindingen)
             verbinding = self.verbindingen_lijst.zoek_verbinding(huidig_station.naam, volgende_station.naam)
 
             # Checkt of de tijdslimiet wordt overstreden
