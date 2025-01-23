@@ -14,7 +14,6 @@ class Traject:
            (verbinding.station2, verbinding.station1) not in self.gebruikte_verbindingen:
             self.traject.append(verbinding)
             self.gebruikte_verbindingen.add((verbinding.station1, verbinding.station2))
-            self.totale_tijd += verbinding.tijd
 
             # Voeg station1 toe als het nog niet is toegevoegd
             if verbinding.station1 not in self.bezochte_stations:
