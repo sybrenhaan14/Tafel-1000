@@ -37,10 +37,9 @@ class Main:
                 print("Ongeldige keuze. Kies R voor Random of G voor Greedy.")
 
      # Het netwerk wordt opgebouwd en de resultaten worden gegenereerd
-    def main(self):
+    def main(self, regio, algo):
 
         # Initialiseer stations en verbindingen
-        regio = self.keuze_nl_of_holland()
         if regio == 'H':
             verbindingen_lijst = Verbindingen('../../Data/ConnectiesHolland.csv')
             station_lijst = Stations('../../Data/StationsHolland.csv', verbindingen_lijst)
@@ -49,7 +48,6 @@ class Main:
             verbindingen_lijst = Verbindingen('../../Data/ConnectiesNationaal.csv')
             station_lijst = Stations('../../Data/StationsNationaal.csv', verbindingen_lijst)
 
-        algo = self.keuze_random_of_greedy()
         # Creëer een netwerk met trajecten
         netwerken = Netwerken(station_lijst, verbindingen_lijst)
         netwerk = netwerken.genereer_trajecten(algo)
@@ -79,13 +77,15 @@ class Main:
         output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Data', 'outputs', 'test')
         count = 0
         
+        regio = self.keuze_nl_of_holland()
+        algo = self.keuze_random_of_greedy()
         # Voert de simulatie x aantal keer uit 
-        for count in range(1, 10):  
+        for count in range(1, 100):  
             print(count) # Houd bij bij welke itteratie we zijn 
             count =+ 1
 
             # Voert de simulatie uit en slaat resultaten op
-            data, score = self.main()
+            data, score = self.main(regio, algo)
 
             if data:
                 

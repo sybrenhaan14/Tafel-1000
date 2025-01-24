@@ -47,7 +47,7 @@ class Netwerken:
     # Kiest een station dat nog niet eerder is bezocht
     def kies_startstation(self, algo):
         if algo == 'G':
-            
+            None
         if algo == 'R':
             return random.choice(self.stations_set.stations)
 
@@ -59,7 +59,7 @@ class Netwerken:
 
         while totale_tijd < self.tijdslimiet:
            
-            traject.bezochte_stations.append(huidig_station)
+            traject.bezochte_stations.append(huidig_station.naam)
             # Kiest volgend station en voegt verbinding toe 
             opties_huidig_station = self.stations_set.geef_opties(huidig_station.naam)
             if algo == 'R':
