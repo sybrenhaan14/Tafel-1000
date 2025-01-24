@@ -61,7 +61,7 @@ class Main:
             output_data.append([f'train_{traject.traject_id}', f'[{", ".join(traject.bezochte_stations)}]'])
 
         # Bereken de score van het netwerk en voeg deze toe aan de output
-        score_uitrekenen = Score(netwerk)
+        score_uitrekenen = Score(netwerk, verbindingen_lijst)
         score = score_uitrekenen.bereken_score()
         output_data.append([f'score', score])
 

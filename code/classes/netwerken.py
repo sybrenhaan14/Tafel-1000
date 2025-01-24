@@ -98,14 +98,18 @@ class Netwerken:
 
 # Klasse om score van netwerk te berekenen
 class Score:
-    def __init__(self, netwerk):
+    def __init__(self, netwerk, verbindingen_lijst):
         self.netwerk = netwerk
-
+        self.verbindingen_lijst = verbindingen_lijst
+        
     def bereken_score(self):
         aantal_bereden_verbindingen = len(self.netwerk.gereden_verbindingen)
         aantal_trajecten = len(self.netwerk.netwerk)
+        totaal_verbindingen = len(self.verbindingen_lijst.verbindingen)
+        print(aantal_bereden_verbindingen)
+        print(totaal_verbindingen)
         Min = sum(verbinding.tijd for traject in self.netwerk.netwerk for verbinding in traject.traject)# Totale tijd
 
-        score = (aantal_bereden_verbindingen / 28 ) * 10000 - (aantal_trajecten * 100 + Min)
+        score = (aantal_bereden_verbindingen / totaal_verbindingen ) * 10000 - (aantal_trajecten * 100 + Min)
 
         return score

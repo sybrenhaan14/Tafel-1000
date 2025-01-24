@@ -14,4 +14,6 @@ class Traject:
             self.traject.append(verbinding)
             self.totale_tijd += verbinding.tijd
             gebruikte_verbindingen.add((verbinding.station1, verbinding.station2))
+            # Debug statements
+        print(f"Toegevoegde verbinding: {verbinding}")
 
