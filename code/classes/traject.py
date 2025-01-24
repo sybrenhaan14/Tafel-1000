@@ -4,7 +4,7 @@ class Traject:
     def __init__(self, traject_id):
         self.traject_id = traject_id
         self.traject = []
-        self.totale_tijd = 0
+        self.traject_tijd = 0
         self.bezochte_stations = []
 
     def voeg_verbinding_toe(self, verbinding, gebruikte_verbindingen):
@@ -12,7 +12,7 @@ class Traject:
         if (verbinding.station1, verbinding.station2) not in gebruikte_verbindingen and \
            (verbinding.station2, verbinding.station1) not in gebruikte_verbindingen:
             self.traject.append(verbinding)
-            self.totale_tijd += verbinding.tijd
+            self.traject_tijd += verbinding.tijd
             gebruikte_verbindingen.add((verbinding.station1, verbinding.station2))
             # Debug statements
         print(f"Toegevoegde verbinding: {verbinding}")

@@ -21,12 +21,18 @@ class Netwerk:
 
 # Klasse om trajecten te generern
 class Netwerken:
-    def __init__(self, stations_set, verbindingen_lijst, max_trajecten=7, tijdslimiet=120):
+    def __init__(self, stations_set, verbindingen_lijst, regio):
         self.stations_set = stations_set
         self.verbindingen_lijst = verbindingen_lijst
-        self.max_trajecten = max_trajecten
-        self.tijdslimiet = tijdslimiet
         self.netwerk = Netwerk()
+
+        if regio == 'H':
+            self.tijdslimiet = 120
+            self.max_trajecten = 7
+        
+        if regio == 'N':
+            self.max_tijdslimiet = 180
+            self.max_trajecten = 20
 
     # Genereert een netwerk met trajecten
     def genereer_trajecten(self, algo):
@@ -70,7 +76,7 @@ class Netwerken:
 
             # Checkt of de tijdslimiet wordt overstreden
             if totale_tijd + verbinding.tijd > self.tijdslimiet:
-                break  
+                break
             traject.voeg_verbinding_toe(verbinding, self.netwerk.gereden_verbindingen) # Voegt de verbinding toe aan traject
             totale_tijd += verbinding.tijd # Update totale_tijd
             huidig_station = volgende_station

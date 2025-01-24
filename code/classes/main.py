@@ -49,7 +49,7 @@ class Main:
             station_lijst = Stations('../../Data/StationsNationaal.csv', verbindingen_lijst)
 
         # Creëer een netwerk met trajecten
-        netwerken = Netwerken(station_lijst, verbindingen_lijst)
+        netwerken = Netwerken(station_lijst, verbindingen_lijst, regio)
         netwerk = netwerken.genereer_trajecten(algo)
 
         # Voorbereiden van gegevens voor CSV-output
