@@ -4,14 +4,14 @@ class Traject:
     def __init__(self, traject_id):
         self.traject_id = traject_id
         self.traject = []
-        self.gebruikte_verbindingen = set()  # Houd bij welke verbindingen al zijn gebruikt
         self.totale_tijd = 0
         self.bezochte_stations = []
 
-    def voeg_verbinding_toe(self, verbinding):
+    def voeg_verbinding_toe(self, verbinding, gebruikte_verbindingen):
         # Controleer of de verbinding al eerder is gebruikt
-        if (verbinding.station1, verbinding.station2) not in self.gebruikte_verbindingen and \
-           (verbinding.station2, verbinding.station1) not in self.gebruikte_verbindingen:
+        if (verbinding.station1, verbinding.station2) not in gebruikte_verbindingen and \
+           (verbinding.station2, verbinding.station1) not in gebruikte_verbindingen:
             self.traject.append(verbinding)
-            self.gebruikte_verbindingen.add((verbinding.station1, verbinding.station2))
+            self.totale_tijd += verbinding.tijd
+            gebruikte_verbindingen.add((verbinding.station1, verbinding.station2))
 

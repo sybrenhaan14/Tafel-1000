@@ -9,6 +9,7 @@ class Netwerk:
     def __init__(self):
         # Lijst van trajecten die deel uitmaken van het netwerk
         self.netwerk = []
+        self.gereden_verbindingen = set()
 
     # Voegt traject toe aan netwerk
     def voeg_traject_toe(self, traject):
@@ -30,13 +31,12 @@ class Netwerken:
     # Genereert een netwerk met trajecten
     def genereer_trajecten(self, algo):
         
-        gereden_verbindingen = set()
         trajecten = 0
 
         while trajecten < self.max_trajecten:
             traject = Traject(trajecten + 1)
             start_station = self.kies_startstation(algo)
-            self.voeg_verbindingen_toe(start_station, traject, gereden_verbindingen, algo)
+            self.voeg_verbindingen_toe(start_station, traject, algo)
 
             # Voegt traject toe aan netwerk
             self.netwerk.voeg_traject_toe(traject)
@@ -52,7 +52,7 @@ class Netwerken:
             return random.choice(self.stations_set.stations)
 
     # Voegt verbindingen toe aan traject todat de tijdslimiet is bereikt
-    def voeg_verbindingen_toe(self, huidig_station, traject, gereden_verbindingen, algo):
+    def voeg_verbindingen_toe(self, huidig_station, traject, algo):
         
 
         totale_tijd = 0 #houd te tijd bij
@@ -65,13 +65,13 @@ class Netwerken:
             if algo == 'R':
                 volgende_station = kies_opties_random(opties_huidig_station)
             if algo == 'G':
-                volgende_station = kies_opties_greedy(opties_huidig_station, huidig_station.naam, gereden_verbindingen)
+                volgende_station = kies_opties_greedy(opties_huidig_station, huidig_station.naam, self.netwerk.gereden_verbindingen)
             verbinding = self.verbindingen_lijst.zoek_verbinding(huidig_station.naam, volgende_station.naam)
 
             # Checkt of de tijdslimiet wordt overstreden
             if totale_tijd + verbinding.tijd > self.tijdslimiet:
                 break  
-            traject.voeg_verbinding_toe(verbinding) # Voegt de verbinding toe aan traject
+            traject.voeg_verbinding_toe(verbinding, self.netwerk.gereden_verbindingen) # Voegt de verbinding toe aan traject
             totale_tijd += verbinding.tijd # Update totale_tijd
             huidig_station = volgende_station
 
@@ -102,7 +102,7 @@ class Score:
         self.netwerk = netwerk
 
     def bereken_score(self):
-        aantal_bereden_verbindingen = len(self.netwerk.netwerk)
+        aantal_bereden_verbindingen = len(self.netwerk.gereden_verbindingen)
         aantal_trajecten = len(self.netwerk.netwerk)
         Min = sum(verbinding.tijd for traject in self.netwerk.netwerk for verbinding in traject.traject)# Totale tijd
 

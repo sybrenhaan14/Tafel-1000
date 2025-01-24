@@ -1,9 +1,0 @@
-train,stations
-train_1,"[Castricum, Alkmaar, Den Helder, Hoorn]"
-train_2,"[Alkmaar, Den Helder]"
-train_3,"[Beverwijk, Castricum, Haarlem, Zaandam]"
-train_4,"[Delft, Den Haag Centraal, Gouda, Leiden Centraal]"
-train_5,"[Zaandam, Hoorn, Amsterdam Sloterdijk, Castricum, Beverwijk]"
-train_6,"[Castricum, Alkmaar, Den Helder, Hoorn]"
-train_7,"[Alkmaar, Den Helder, Hoorn, Castricum]"
-score,1391.0
