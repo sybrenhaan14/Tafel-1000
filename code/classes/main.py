@@ -74,13 +74,13 @@ class Main:
     def simulatie(self):
         
         # maakt de output directory
-        output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Data', 'outputs')
+        output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Data', 'outputs', 'random')
         count = 0
         
         regio = self.keuze_nl_of_holland()
         algo = self.keuze_random_of_greedy()
         # Voert de simulatie x aantal keer uit 
-        for count in range(1, 2):  
+        for count in range(1, 50000):  
             print(count) # Houd bij bij welke itteratie we zijn 
             count =+ 1
 
@@ -90,7 +90,7 @@ class Main:
             if data:
                 
                 # Maakt csv bestand aan 
-                output_bestand = os.path.join(output_dir, f"output.csv")
+                output_bestand = os.path.join(output_dir, f"output_{score}.csv")
 
                 # Opent csv bestand en schrijft de uitkomst (netwerk) in het bestand.
                 with open(output_bestand, mode="w", newline="", encoding="utf-8") as file:

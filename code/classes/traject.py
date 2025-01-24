@@ -12,8 +12,5 @@ class Traject:
         if (verbinding.station1, verbinding.station2) not in gebruikte_verbindingen and \
            (verbinding.station2, verbinding.station1) not in gebruikte_verbindingen:
             self.traject.append(verbinding)
-            self.traject_tijd += verbinding.tijd
             gebruikte_verbindingen.add((verbinding.station1, verbinding.station2))
-            # Debug statements
-        print(f"Toegevoegde verbinding: {verbinding}")
 

@@ -1,0 +1,9 @@
+train,stations
+train_1,"[Alkmaar, Hoorn, Zaandam, Hoorn, Zaandam, Castricum]"
+train_2,"[Beverwijk, Haarlem, Beverwijk, Castricum, Zaandam, Hoorn, Alkmaar]"
+train_3,"[Alkmaar, Den Helder, Alkmaar, Hoorn]"
+train_4,"[Hoorn, Zaandam, Beverwijk, Zaandam, Amsterdam Sloterdijk, Zaandam, Amsterdam Sloterdijk, Amsterdam Zuid]"
+train_5,"[Castricum, Alkmaar, Den Helder, Alkmaar, Den Helder]"
+train_6,"[Hoorn, Alkmaar, Hoorn, Alkmaar, Den Helder]"
+train_7,"[Castricum, Beverwijk, Haarlem, Amsterdam Sloterdijk, Zaandam, Castricum, Alkmaar, Den Helder]"
+score,2569.5714285714284

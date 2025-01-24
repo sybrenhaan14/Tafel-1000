@@ -76,6 +76,7 @@ class Netwerken:
 
             # Checkt of de tijdslimiet wordt overstreden
             if totale_tijd + verbinding.tijd > self.tijdslimiet:
+                traject.traject_tijd = totale_tijd
                 break
             traject.voeg_verbinding_toe(verbinding, self.netwerk.gereden_verbindingen) # Voegt de verbinding toe aan traject
             totale_tijd += verbinding.tijd # Update totale_tijd
@@ -112,9 +113,7 @@ class Score:
         aantal_bereden_verbindingen = len(self.netwerk.gereden_verbindingen)
         aantal_trajecten = len(self.netwerk.netwerk)
         totaal_verbindingen = len(self.verbindingen_lijst.verbindingen)
-        print(aantal_bereden_verbindingen)
-        print(totaal_verbindingen)
-        Min = sum(verbinding.tijd for traject in self.netwerk.netwerk for verbinding in traject.traject)# Totale tijd
+        Min = sum(traject.traject_tijd for traject in self.netwerk.netwerk)# Totale tijd
 
         score = (aantal_bereden_verbindingen / totaal_verbindingen ) * 10000 - (aantal_trajecten * 100 + Min)
 
