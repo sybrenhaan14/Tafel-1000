@@ -59,6 +59,7 @@ class Netwerken:
 
         while totale_tijd < self.tijdslimiet:
            
+            traject.bezochte_stations.append(huidig_station)
             # Kiest volgend station en voegt verbinding toe 
             opties_huidig_station = self.stations_set.geef_opties(huidig_station.naam)
             if algo == 'R':
@@ -70,9 +71,9 @@ class Netwerken:
             # Checkt of de tijdslimiet wordt overstreden
             if totale_tijd + verbinding.tijd > self.tijdslimiet:
                 break  
-            traject.bezochte_stations.append(huidig_station)
             traject.voeg_verbinding_toe(verbinding) # Voegt de verbinding toe aan traject
             totale_tijd += verbinding.tijd # Update totale_tijd
+            huidig_station = volgende_station
 
 
     # Controleert welke verbindingen nog niet zijn bezocht
