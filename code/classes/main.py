@@ -42,11 +42,11 @@ class Main:
         # Initialiseer stations en verbindingen
         regio = self.keuze_nl_of_holland()
         if regio == 'H':
-            verbindingen_lijst = Verbindingen('../../Data/ConnectiesHolland')
+            verbindingen_lijst = Verbindingen('../../Data/ConnectiesHolland.csv')
             station_lijst = Stations('../../Data/StationsHolland.csv', verbindingen_lijst)
 
         if regio == 'N':
-            verbindingen_lijst = Verbindingen('../../Data/ConnectiesNationaal')
+            verbindingen_lijst = Verbindingen('../../Data/ConnectiesNationaal.csv')
             station_lijst = Stations('../../Data/StationsNationaal.csv', verbindingen_lijst)
 
         algo = self.keuze_random_of_greedy()
@@ -76,11 +76,11 @@ class Main:
     def simulatie(self):
         
         # maakt de output directory
-        output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Data', 'outputs', 'random')
+        output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Data', 'outputs', 'test')
         count = 0
         
         # Voert de simulatie x aantal keer uit 
-        for count in range(1, 1000000):  
+        for count in range(1, 10):  
             print(count) # Houd bij bij welke itteratie we zijn 
             count =+ 1
 
