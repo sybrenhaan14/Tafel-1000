@@ -35,7 +35,7 @@ class Netwerken:
 
         while trajecten < self.max_trajecten:
             traject = Traject(trajecten + 1)
-            start_station = self.kies_startstation()
+            start_station = self.kies_startstation(algo)
             self.voeg_verbindingen_toe(start_station, traject, gereden_verbindingen, algo)
 
             # Voegt traject toe aan netwerk
@@ -46,6 +46,8 @@ class Netwerken:
 
     # Kiest een station dat nog niet eerder is bezocht
     def kies_startstation(self, algo):
+        if algo == 'G':
+            
         if algo == 'R':
             return random.choice(self.stations_set.stations)
 
@@ -68,6 +70,7 @@ class Netwerken:
             # Checkt of de tijdslimiet wordt overstreden
             if totale_tijd + verbinding.tijd > self.tijdslimiet:
                 break  
+            traject.bezochte_stations.append(huidig_station)
             traject.voeg_verbinding_toe(verbinding) # Voegt de verbinding toe aan traject
             totale_tijd += verbinding.tijd # Update totale_tijd
 

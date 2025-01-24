@@ -15,10 +15,3 @@ class Traject:
             self.traject.append(verbinding)
             self.gebruikte_verbindingen.add((verbinding.station1, verbinding.station2))
 
-            # Voeg station1 toe als het nog niet is toegevoegd
-            if verbinding.station1 not in self.bezochte_stations:
-                self.bezochte_stations.append(verbinding.station1)
-            
-            # Voeg station2 toe als het nog niet is toegevoegd
-            if verbinding.station2 not in self.bezochte_stations:
-                self.bezochte_stations.append(verbinding.station2)
