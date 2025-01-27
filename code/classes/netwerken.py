@@ -10,6 +10,7 @@ class Netwerk:
         # Lijst van trajecten die deel uitmaken van het netwerk
         self.netwerk = []
         self.gereden_verbindingen = set()
+        self.bezochte_stations = set()
 
     # Voegt traject toe aan netwerk
     def voeg_traject_toe(self, traject):
@@ -53,7 +54,11 @@ class Netwerken:
     # Kiest een station dat nog niet eerder is bezocht
     def kies_startstation(self, algo):
         if algo == 'G':
-            None
+            niet_bezocht = [item for item in self.stations_set.stations if item not in self.netwerk.bezochte_stations]
+            if niet_bezocht:
+                return random.choice(niet_bezocht)
+            else:
+                return random.choice(self.stations_set.stations)
         if algo == 'R':
             return random.choice(self.stations_set.stations)
 
@@ -66,6 +71,7 @@ class Netwerken:
         while totale_tijd < self.tijdslimiet:
            
             traject.bezochte_stations.append(huidig_station.naam)
+            self.netwerk.bezochte_stations.add(huidig_station.naam)
             # Kiest volgend station en voegt verbinding toe 
             opties_huidig_station = self.stations_set.geef_opties(huidig_station.naam)
             if algo == 'R':
