@@ -65,9 +65,8 @@ class Lijnvoering:
     # Voegt verbindingen toe aan traject todat de tijdslimiet is bereikt
     def voeg_verbindingen_toe(self, huidig_station, traject, algo):
         
-        totale_tijd = 0 #houd te tijd bij
 
-        while totale_tijd < self.tijdslimiet:
+        while traject.traject_tijd < self.tijdslimiet:
            
             traject.bezochte_stations.append(huidig_station.naam)
             self.netwerk.bezochte_stations.add(huidig_station.naam)
@@ -80,10 +79,9 @@ class Lijnvoering:
             verbinding = self.verbindingen_lijst.zoek_verbinding(huidig_station.naam, volgende_station.naam)
 
             # Checkt of de tijdslimiet wordt overstreden
-            if totale_tijd + verbinding.tijd > self.tijdslimiet:
+            if traject.traject_tijd + verbinding.tijd > self.tijdslimiet:
                 break
             traject.voeg_verbinding_toe(verbinding, self.netwerk.gereden_verbindingen) # Voegt de verbinding toe aan traject
-            totale_tijd += verbinding.tijd # Update totale_tijd
             huidig_station = volgende_station
             if self.netwerk.alle_verbindingen_bereikt(self.verbindingen_lijst):
                 break
