@@ -81,7 +81,6 @@ class Lijnvoering:
 
             # Checkt of de tijdslimiet wordt overstreden
             if totale_tijd + verbinding.tijd > self.tijdslimiet:
-                traject.traject_tijd = totale_tijd
                 break
             traject.voeg_verbinding_toe(verbinding, self.netwerk.gereden_verbindingen) # Voegt de verbinding toe aan traject
             totale_tijd += verbinding.tijd # Update totale_tijd

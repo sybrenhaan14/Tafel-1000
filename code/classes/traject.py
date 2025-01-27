@@ -8,9 +8,7 @@ class Traject:
         self.bezochte_stations = []
 
     def voeg_verbinding_toe(self, verbinding, gebruikte_verbindingen):
-        # Controleer of de verbinding al eerder is gebruikt
-        if (verbinding.station1, verbinding.station2) not in gebruikte_verbindingen and \
-           (verbinding.station2, verbinding.station1) not in gebruikte_verbindingen:
             self.traject.append(verbinding)
+            self.traject_tijd += verbinding.tijd
             gebruikte_verbindingen.add((verbinding.id))
 
