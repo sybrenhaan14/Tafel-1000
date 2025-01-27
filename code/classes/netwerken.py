@@ -86,7 +86,7 @@ class Lijnvoering:
             totale_tijd += verbinding.tijd # Update totale_tijd
             huidig_station = volgende_station
             if self.netwerk.alle_verbindingen_bereikt(self.verbindingen_lijst):
-                breakpoint
+                break
 
 
     # Controleert welke verbindingen nog niet zijn bezocht
