@@ -83,7 +83,7 @@ class Main:
         
 
         # Voert de simulatie x aantal keer uit 
-        for count in range(1, 100):  
+        for count in range(1, 2):  
             print(count) # Houd bij bij welke itteratie we zijn 
             count =+ 1
 
