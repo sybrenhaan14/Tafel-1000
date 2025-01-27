@@ -76,7 +76,7 @@ class Main:
         algo = self.keuze_random_of_greedy()
         # maakt de output directory
         if algo == 'R':
-            output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Data', 'outputs', 'random')
+            output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Data', 'outputs', 'test')
         if algo == 'G':
             output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Data', 'outputs', 'greedy')
         count = 0

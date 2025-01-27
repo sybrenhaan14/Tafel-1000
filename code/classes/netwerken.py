@@ -18,7 +18,7 @@ class Netwerk:
 
     # Checkt of alle verbindingen bereden zijn
     def alle_verbindingen_bereikt(self, verbindingen):
-        return len(verbindingen.bereden_verbindingen) == len(verbindingen.verbindingen)
+        return len(self.gereden_verbindingen) == len(verbindingen.verbindingen)
 
 # Klasse om trajecten te generern
 class Lijnvoering:
@@ -65,7 +65,6 @@ class Lijnvoering:
     # Voegt verbindingen toe aan traject todat de tijdslimiet is bereikt
     def voeg_verbindingen_toe(self, huidig_station, traject, algo):
         
-
         totale_tijd = 0 #houd te tijd bij
 
         while totale_tijd < self.tijdslimiet:
@@ -87,6 +86,8 @@ class Lijnvoering:
             traject.voeg_verbinding_toe(verbinding, self.netwerk.gereden_verbindingen) # Voegt de verbinding toe aan traject
             totale_tijd += verbinding.tijd # Update totale_tijd
             huidig_station = volgende_station
+            if self.netwerk.alle_verbindingen_bereikt(self.verbindingen_lijst):
+                breakpoint
 
 
     # Controleert welke verbindingen nog niet zijn bezocht

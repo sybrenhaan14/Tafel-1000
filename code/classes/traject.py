@@ -12,5 +12,5 @@ class Traject:
         if (verbinding.station1, verbinding.station2) not in gebruikte_verbindingen and \
            (verbinding.station2, verbinding.station1) not in gebruikte_verbindingen:
             self.traject.append(verbinding)
-            gebruikte_verbindingen.add((verbinding.station1, verbinding.station2))
+            gebruikte_verbindingen.add((verbinding.id))
 
