@@ -49,8 +49,8 @@ class Main:
             station_lijst = Stations('../../Data/StationsNationaal.csv', verbindingen_lijst)
 
         # Creëer een netwerk met trajecten
-        netwerken = Netwerken(station_lijst, verbindingen_lijst, regio)
-        netwerk = netwerken.genereer_trajecten(algo)
+        lijnvoering = Lijnvoering(station_lijst, verbindingen_lijst, regio)
+        netwerk = lijnvoering.genereer_trajecten(algo)
 
         # Voorbereiden van gegevens voor CSV-output
         output_data = []
@@ -61,8 +61,7 @@ class Main:
             output_data.append([f'train_{traject.traject_id}', f'[{", ".join(traject.bezochte_stations)}]'])
 
         # Bereken de score van het netwerk en voeg deze toe aan de output
-        score_uitrekenen = Score(netwerk, verbindingen_lijst)
-        score = score_uitrekenen.bereken_score()
+        score = lijnvoering.bereken_score(netwerk, verbindingen_lijst)
         output_data.append([f'score', score])
 
         # print("Output Data:", output_data)

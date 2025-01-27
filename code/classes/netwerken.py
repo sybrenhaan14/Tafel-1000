@@ -21,7 +21,7 @@ class Netwerk:
         return len(verbindingen.bereden_verbindingen) == len(verbindingen.verbindingen)
 
 # Klasse om trajecten te generern
-class Netwerken:
+class Lijnvoering:
     def __init__(self, stations_set, verbindingen_lijst, regio):
         self.stations_set = stations_set
         self.verbindingen_lijst = verbindingen_lijst
@@ -32,7 +32,7 @@ class Netwerken:
             self.max_trajecten = 7
         
         if regio == 'N':
-            self.max_tijdslimiet = 180
+            self.tijdslimiet = 180
             self.max_trajecten = 20
 
     # Genereert een netwerk met trajecten
@@ -109,17 +109,12 @@ class Netwerken:
 
         return niet_bezochte_verbindingen
 
-# Klasse om score van netwerk te berekenen
-class Score:
-    def __init__(self, netwerk, verbindingen_lijst):
-        self.netwerk = netwerk
-        self.verbindingen_lijst = verbindingen_lijst
         
-    def bereken_score(self):
-        aantal_bereden_verbindingen = len(self.netwerk.gereden_verbindingen)
-        aantal_trajecten = len(self.netwerk.netwerk)
-        totaal_verbindingen = len(self.verbindingen_lijst.verbindingen)
-        Min = sum(traject.traject_tijd for traject in self.netwerk.netwerk)# Totale tijd
+    def bereken_score(self, netwerk, verbindingen_lijst):
+        aantal_bereden_verbindingen = len(netwerk.gereden_verbindingen)
+        aantal_trajecten = len(netwerk.netwerk)
+        totaal_verbindingen = len(verbindingen_lijst.verbindingen)
+        Min = sum(traject.traject_tijd for traject in netwerk.netwerk)# Totale tijd
 
         score = (aantal_bereden_verbindingen / totaal_verbindingen ) * 10000 - (aantal_trajecten * 100 + Min)
 
