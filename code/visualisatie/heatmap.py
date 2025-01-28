@@ -43,7 +43,7 @@ def maak_map_met_heatmap(geojson_data, stations, frequenties):
 # functie om kleuren te genereren voor lijnen op basis van frequentie
 def get_heatmap_kleur(frequentie):
     
-    norm = colors.LogNorm(vmin=10000, vmax=30000)  #lognorm om kleuren verder uit elkaar te laten staan in de verdeling
+    norm = colors.LogNorm(vmin=350, vmax=100000)  #lognorm om kleuren verder uit elkaar te laten staan in de verdeling
     cmap = cm._colormaps['plasma_r'] #nieuwe versie want de oude gaat binnenkort weg
 
 
@@ -52,17 +52,17 @@ def get_heatmap_kleur(frequentie):
     return colors.to_hex(kleur)
 
 # laad GeoJSON
-geojson_data = laad_geojson('../../Data/nl_regions.geojson')
+geojson_data = laad_geojson('../../Data/import_csv/nl_regions.geojson')
 
 # laad stations
-stations_data = laad_stations('../../Data/StationsNationaal.csv')
+stations_data = laad_stations('../../Data/import_csv/StationsNationaal.csv')
 
 # laad frequenties
-frequenties_data = laad_frequenties('../../Data/outputs/frequenties_random_nationaal.csv')
+frequenties_data = laad_frequenties('../../Data/outputs/frequenties/frequenties_greedy_random.csv')
 
 # maak de kaart met heatmap-lijnen
 map_nl_met_heatmap = maak_map_met_heatmap(geojson_data, stations_data, frequenties_data)
 
 # Sla de kaart op
-map_nl_met_heatmap.save('../../Docs/kaart_met_heatmap.html')
+map_nl_met_heatmap.save('../../Docs/heatmap_greedy_random.html')
 

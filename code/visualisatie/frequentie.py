@@ -2,8 +2,8 @@ import os
 import pandas as pd
 
 # Directory en output CSV-bestand
-input_directory = "../../Data/outputs/random_nationaal"
-output_csv = "../../Data/outputs/frequenties/frequentie_random_nationaal.csv"
+input_directory = "../../Data/outputs/random_Nationaal"
+output_csv = "../../Data/outputs/frequenties/frequentie_random"
 
 # Functie om een lijst met stations veilig te parseren
 def schoonmaken_station_lijst(station_str):
