@@ -51,10 +51,20 @@ class Lijnvoering:
 
         return self.netwerk
 
+    # Kiest een station dat nog niet eerder is bezocht
+    def kies_startstation(self, algo):
+        if algo == 'G':
+            niet_bezocht = [item for item in self.stations_set.stations if item not in self.netwerk.bezochte_stations]
+            if niet_bezocht:
+                return random.choice(niet_bezocht)
+            else:
+                return random.choice(self.stations_set.stations)
+        if algo == 'R':
+            return random.choice(self.stations_set.stations)
+
     # Voegt verbindingen toe aan traject todat de tijdslimiet is bereikt
     def voeg_verbindingen_toe(self, huidig_station, traject, algo):
         
-
         while traject.traject_tijd < self.tijdslimiet:
            
             traject.bezochte_stations.append(huidig_station.naam)
@@ -62,7 +72,7 @@ class Lijnvoering:
             # Kiest volgend station en voegt verbinding toe 
             opties_huidig_station = self.stations_set.geef_opties(huidig_station.naam)
             volgende_station = algo.kies_volgende_station(huidig_station, opties_huidig_station, self.netwerk.gereden_verbindingen)
-            verbinding = self.verbindingen_lijst.zoek_verbinding(huidig_station.naam, volgende_station.naam)
+            verbinding = self.verbinding_lijst.zoek_verbinding(huidig_station.naam, volgende_station.naam)
 
             # Checkt of de tijdslimiet wordt overstreden
             if traject.traject_tijd + verbinding.tijd > self.tijdslimiet:
@@ -100,5 +110,10 @@ class Lijnvoering:
         totaal_verbindingen = len(verbindingen_lijst.verbindingen)
         Min = sum(traject.traject_tijd for traject in netwerk.netwerk)# Totale tijd
 
+        print(f"Aantal unieke verbindingen: {aantal_bereden_verbindingen}")
+        print(f"Totaal aantal verbindingen: {totaal_verbindingen}")
+        print(f"Totale tijd (Min): {Min}")
+
         score = (aantal_bereden_verbindingen / totaal_verbindingen ) * 10000 - (aantal_trajecten * 100 + Min)
+        print(f"Bereken Score: {score}")
         return score

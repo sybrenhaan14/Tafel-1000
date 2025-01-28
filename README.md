@@ -42,8 +42,11 @@ Het eerste algoritme wat we hebben geïmplementeerd is het random algoritme. Dit
 
 Dit algoritme maakt de keus die op dat moment het voordeligst lijkt, zonder terug te kijken. Dit is het tweede algoritme wat we hebben geïmplementeerd. Het algoritme wordt gebruikt bij het kiezen van het volgende station en daarbij de keuze voor de volgende verbinding die wordt gereden. Het algoritme kiest voor de beste keus en dat is de kortst mogelijke verbinding die nog niet is gereden. Wanneer alle verbindingen al zijn gereden kiest het algoritme voor de kortste verbinding. Er is gekozen om de tijd van de verbinding een rol te laten spelen bij de keuze voor de beste optie. Er is hier voor gekozen aangezien we een tijdsframe van twee uur hebben om de lijnvoering uit te voeren, daarnaast draagt een kortere totale tijd bij aan een hogere score. (opvallende dingen na implementeren algoritme?)
 
-### Experiment
+### Experimenteren met algoritmes
 
+Een van de problemen waar wij tegen aan zijn gelopen had te maken met het Greedy algoritme. We laten het algoritme de beste keus maken, hierdoor kiest hij de korste optie die niet is gereden. We laten het algoritme lopen tot 180 minuten lopen, maar met deze voorwaardes die we aan het algoritme hebben gehangen krijgen we niet een optimaal resultaat. Wanneer alle opties van bepaalde zijn gereden en  twee stations elkaars kortste opties zijn zullen ze steeds naar elkaar rijden. Hierdoor zullen er minder verbindingen worden gereden dan we willen en één bepaalde verbinding heel vaak. Met behulp van een experiment willen we erachter komen hoe we dit kunnen vermijden.
+
+Daarnaast kiezen we nu met behulp van een random algoritme een start station, maar we waren benieuwd of er effectievere startstations zijn. In volgend experiment hebbenn we dit gestest. 
 ## 4 Resultaten 
 
 ### Beperkingen

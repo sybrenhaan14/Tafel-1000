@@ -43,5 +43,4 @@ class Greedy(Algoritme):
             if (huidig_station.naam, optie.naam) not in gereden_verbindingen and \
                (optie.naam, huidig_station.naam) not in gereden_verbindingen:
                 return optie  # Retourneer het geselecteerde station
-        # Fallback als alle verbindingen zijn bereden
-        return random.choice(opties_huidig_station)
+            break
