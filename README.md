@@ -54,4 +54,10 @@ Daarnaast kiezen we nu met behulp van een random algoritme een start station, ma
 
 ## 4 Resultaten 
 
+Uit onze output blijk dat er bij het gebruik van een random algoritme voornamelijk hoge positieve scores komen. Zowel op het niveau van Holland als op Nationaal niveau. Het Greedy algortime geeft daarentegen op niveau van Holland met name negatieve scores en op Nationaal niveua alleen maar negatieve scores. 
+
 ### Beperkingen
+
+Opvallend aan onze resultaten is dat met het random algoritme er overwegened veel hoge positieve scores worden gevonden en met het Greedy algoritme op enkele na alleen maar negatieve scores vindt. Zelf bij het uitvoeren van meerdere experimenten op het Greedy algoritme, blijven de scores negatief. Dit is te verklaren uit de werking van de algoritmes. Het Greedy algoritme kiest altijd de beste optie, zonder terug of vooruit te kijken. Hierdoor houdt het algoritme geen rekeneing met de gevolgen die de keus kan hebben op het gehele netwerk. Hierdoor ontstaan situaties waarin het algoritme verbindingen niet efficiënt benut. Het gebruik van het Greedy algoritme kan leiden tot trajecten die niet efficiënt zijn en daardoor een negatieve score. Een ander mogelijke oorzaak voor de lage score zijn het aantal verbindingen dat er wordt gereden tijdens het gebruik van het Greedy algoritme. Zo worden er steeds maar 42 van de 89 verbindingen gereden, hierdoor valt de score ook lager uit. 
+
+Het random algoritme houdt geen rekening met welke optie het best is. Ondanks dat dit algoritme geen rekening houdt met de beste opties, kiest het per toeval verbindingen die een netwerk creëren met een hogere score. 
