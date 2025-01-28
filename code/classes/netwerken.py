@@ -72,7 +72,10 @@ class Lijnvoering:
             # Kiest volgend station en voegt verbinding toe 
             opties_huidig_station = self.stations_set.geef_opties(huidig_station.naam)
             volgende_station = algo.kies_volgende_station(huidig_station, opties_huidig_station, self.netwerk.gereden_verbindingen)
-            verbinding = self.verbinding_lijst.zoek_verbinding(huidig_station.naam, volgende_station.naam)
+            verbinding = self.verbindingen_lijst.zoek_verbinding(huidig_station.naam, volgende_station.naam)
+
+            if verbinding:
+                break
 
             # Checkt of de tijdslimiet wordt overstreden
             if traject.traject_tijd + verbinding.tijd > self.tijdslimiet:
@@ -110,10 +113,5 @@ class Lijnvoering:
         totaal_verbindingen = len(verbindingen_lijst.verbindingen)
         Min = sum(traject.traject_tijd for traject in netwerk.netwerk)# Totale tijd
 
-        print(f"Aantal unieke verbindingen: {aantal_bereden_verbindingen}")
-        print(f"Totaal aantal verbindingen: {totaal_verbindingen}")
-        print(f"Totale tijd (Min): {Min}")
-
         score = (aantal_bereden_verbindingen / totaal_verbindingen ) * 10000 - (aantal_trajecten * 100 + Min)
-        print(f"Bereken Score: {score}")
         return score
