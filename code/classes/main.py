@@ -76,14 +76,14 @@ class Main:
         algo = self.keuze_random_of_greedy()
         # maakt de output directory
         if algo == 'R':
-            output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Data', 'outputs', 'test')
+            output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Data', 'outputs', 'random_Nationaal')
         if algo == 'G':
             output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Data', 'outputs', 'greedy')
         count = 0
         
 
         # Voert de simulatie x aantal keer uit 
-        for count in range(1, 2):  
+        for count in range(1, 100000 ):  
             print(count) # Houd bij bij welke itteratie we zijn 
             count =+ 1
 
