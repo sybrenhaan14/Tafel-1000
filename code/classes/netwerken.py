@@ -114,6 +114,10 @@ class Lijnvoering:
         totaal_verbindingen = len(verbindingen_lijst.verbindingen)
         Min = sum(traject.traject_tijd for traject in netwerk.netwerk)# Totale tijd
 
-        score = (aantal_bereden_verbindingen / totaal_verbindingen ) * 10000 - (aantal_trajecten * 100 + Min)
+        print(f"Aantal unieke verbindingen: {aantal_bereden_verbindingen}")
+        print(f"Totaal aantal verbindingen: {totaal_verbindingen}")
+        print(f"Totale tijd (Min): {Min}")
 
+        score = (aantal_bereden_verbindingen / totaal_verbindingen ) * 10000 - (aantal_trajecten * 100 + Min)
+        print(f"Bereken Score: {score}")
         return score
