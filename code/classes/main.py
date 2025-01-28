@@ -65,11 +65,11 @@ class Main:
         keuze_algo = self.keuze_random_of_greedy()
 
         if regio == 'H':
-            self.verbindingen_lijst = Verbindingen('../../Data/ConnectiesHolland.csv')
-            self.stations_lijst = Stations('../../Data/StationsHolland.csv', self.verbindingen_lijst)
+            self.verbindingen_lijst = Verbindingen('../../Data/import_csv/ConnectiesHolland.csv')
+            self.stations_lijst = Stations('../../Data/import_csv/StationsHolland.csv', self.verbindingen_lijst)
         elif regio == 'N':
-            self.verbindingen_lijst = Verbindingen('../../Data/ConnectiesNationaal.csv')
-            self.stations_lijst = Stations('../../Data/StationsNationaal.csv', self.verbindingen_lijst)
+            self.verbindingen_lijst = Verbindingen('../../Data/import_csv/ConnectiesNationaal.csv')
+            self.stations_lijst = Stations('../../Data/import_csv/StationsNationaal.csv', self.verbindingen_lijst)
         
         # maakt de output directory
         if keuze_algo == 'R':

@@ -1,0 +1,43 @@
+Station A,Station B,Frequentie
+Beverwijk,Castricum,368
+Alkmaar,Castricum,33044
+Amsterdam Sloterdijk,Zaandam,401
+Amsterdam Centraal,Amsterdam Sloterdijk,44595
+Amsterdam Amstel,Amsterdam Centraal,389
+Den Haag Centraal,Leiden Centraal,367
+Den Haag Laan v NOI,Leiden Centraal,27614
+Oss,s-Hertogenbosch,12544
+Roermond,Weert,10332
+Amsterdam Zuid,Schiphol Airport,22533
+Eindhoven,Helmond,20037
+Amersfoort,Utrecht Centraal,15537
+Heerenveen,Leeuwarden,364
+Heerenveen,Steenwijk,18683
+Breda,Etten-Leur,41271
+Alkmaar,Hoorn,368
+Enschede,Hengelo,28253
+Steenwijk,Zwolle,393
+Assen,Groningen,8180
+Gouda,Rotterdam Alexander,355
+Rotterdam Alexander,Rotterdam Centraal,1444
+Rotterdam Centraal,Schiedam Centrum,95380
+Helmond,Venlo,370
+Apeldoorn,Deventer,12733
+Almere Centrum,Lelystad Centrum,10044
+Roosendaal,Vlissingen,390
+Etten-Leur,Roosendaal,776
+Maastricht,Sittard,12729
+Arnhem Centraal,Nijmegen,395
+Arnhem Centraal,Ede-Wageningen,19376
+Heerlen,Sittard,416
+Almelo,Hengelo,397
+Delft,Den Haag HS,404
+Delft,Schiedam Centrum,724
+Alkmaar,Den Helder,374
+Hilversum,Utrecht Centraal,447
+Breda,Tilburg,359
+Haarlem,Heemstede-Aerdenhout,22127
+Dieren,Zutphen,17358
+Rotterdam Alexander,Rotterdam Blaak,730
+Alphen a/d Rijn,Leiden Centraal,386
+Dordrecht,Rotterdam Blaak,418
