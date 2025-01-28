@@ -44,9 +44,14 @@ Dit algoritme maakt de keus die op dat moment het voordeligst lijkt, zonder teru
 
 ### Experimenteren met algoritmes
 
-Een van de problemen waar wij tegen aan zijn gelopen had te maken met het Greedy algoritme. We laten het algoritme de beste keus maken, hierdoor kiest hij de korste optie die niet is gereden. We laten het algoritme lopen tot 180 minuten lopen, maar met deze voorwaardes die we aan het algoritme hebben gehangen krijgen we niet een optimaal resultaat. Wanneer alle opties van bepaalde zijn gereden en  twee stations elkaars kortste opties zijn zullen ze steeds naar elkaar rijden. Hierdoor zullen er minder verbindingen worden gereden dan we willen en één bepaalde verbinding heel vaak. Met behulp van een experiment willen we erachter komen hoe we dit kunnen vermijden.
+Een van de problemen waar wij tegen aan zijn gelopen had te maken met het Greedy algoritme. We laten het algoritme de beste keus maken, hierdoor kiest hij de kortste optie die niet is gereden. We laten het algoritme lopen tot 180 minuten lopen, maar met deze voorwaardes die we aan het algoritme hebben gehangen krijgen we niet een optimaal resultaat. Wanneer alle opties van bepaalde zijn gereden en  twee stations elkaars kortste opties zijn zullen ze steeds naar elkaar rijden. Hierdoor zullen er minder verbindingen worden gereden dan we willen en één bepaalde verbinding heel vaak. Hierdoor kregen we altijd een negatieve score. Met behulp van een experiment willen we erachter komen hoe we dit kunnen vermijden.
 
-Daarnaast kiezen we nu met behulp van een random algoritme een start station, maar we waren benieuwd of er effectievere startstations zijn. In volgend experiment hebbenn we dit gestest. 
+De huidige code kiest de verbinding die mogelijk is vanuit dat station met de kortste tijd. Dit hebben we proberen op te lossen op twee manieren. In eerste instantie hebben we de code zo herschreven dat wanneer alle mogelijke verbindingen al zijn gereden het algoritme een random keus maakt uit de mogelijke stations. Daarna hebben we de code aangepast dat het traject stopt wanneer alle opties al zijn gereden. Beide aanpassing hebben we 10.000 keer gerund en er zijn ook met deze aanpassingen geen positieve scores gevonden. 
+
+Een volgens experiment wat we hebben uitgevoerd was met een maximaal aantal herhalingen. Er is een code geschreven waarbij opties die al gereden waren tot 3 keer toe konden worden gekozen. Er werd gebruikt gemaakt van een tel variabel, die elke kee hoger werd alas een het volgende station al in de lijst stond met gereden stations. Met deze aangepaste code hebben we het algoritme opnieuw 10.000 keer laten runnen, maar nog steeds bleken alle scores negatief. 
+
+Daarnaast kiezen we nu met behulp van een random algoritme een start station, maar we waren benieuwd of er effectievere startstations zijn. In volgend experiment hebbenn we dit gestest. De aangepaste code voor dit experiment koos een startstation die maar 1 verbinding had. Na het runnen van de aangepaste code waren opnieuw alle scores negatief. 
+
 ## 4 Resultaten 
 
 ### Beperkingen
