@@ -9,13 +9,12 @@ import csv
 class Main:
     def __init__(self):
         # Start de simulatie direct bij init
-        
+        self.stations_lijst = None
+        self.verbindingen_lijst = None
         self.simulatie()
 
-
-
     def keuze_nl_of_holland(self):
-        """Laat de gebruiker kiezen tussen Nederland of Holland"""
+        # Laat de gebruiker kiezen tussen Nederland of Holland
         while True:
             keuze = input("Kies Nederland (N) of Holland (H): ").upper()
             if keuze == "N":
@@ -26,7 +25,7 @@ class Main:
                 print("Ongeldige keuze. Kies N voor Nederland of H voor Holland.")
     
     def keuze_random_of_greedy(self):
-        """Laat de gebruiker kiezen tussen Random of Greedy algoritme"""
+        # Laat de gebruiker kiezen tussen Random of Greedy algoritme
         while True:
             keuze = input("Kies Random (R) of Greedy (G): ").upper()
             if keuze == "R":
@@ -38,15 +37,8 @@ class Main:
 
      # Het netwerk wordt opgebouwd en de resultaten worden gegenereerd
     def main(self, regio, algo):
-
-        # Initialiseer stations en verbindingen
-        if regio == 'H':
-            verbindingen_lijst = Verbindingen('../../Data/ConnectiesHolland.csv')
-            station_lijst = Stations('../../Data/StationsHolland.csv', verbindingen_lijst)
-
-        if regio == 'N':
-            verbindingen_lijst = Verbindingen('../../Data/ConnectiesNationaal.csv')
-            station_lijst = Stations('../../Data/StationsNationaal.csv', verbindingen_lijst)
+        station_lijst = self.stations_lijst
+        verbindingen_lijst = self.verbindingen_lijst
 
         # Creëer een netwerk met trajecten
         lijnvoering = Lijnvoering(station_lijst, verbindingen_lijst, regio)
@@ -63,9 +55,6 @@ class Main:
         # Bereken de score van het netwerk en voeg deze toe aan de output
         score = lijnvoering.bereken_score(netwerk, verbindingen_lijst)
         output_data.append([f'score', score])
-
-        # print("Output Data:", output_data)
-        # print("Score:", score)
         
         return output_data, score 
 
@@ -73,17 +62,27 @@ class Main:
     def simulatie(self):
         
         regio = self.keuze_nl_of_holland()
-        algo = self.keuze_random_of_greedy()
+        keuze_algo = self.keuze_random_of_greedy()
+
+        if regio == 'H':
+            self.verbindingen_lijst = Verbindingen('../../Data/ConnectiesHolland.csv')
+            self.stations_lijst = Stations('../../Data/StationsHolland.csv', self.verbindingen_lijst)
+        elif regio == 'N':
+            self.verbindingen_lijst = Verbindingen('../../Data/ConnectiesNationaal.csv')
+            self.stations_lijst = Stations('../../Data/StationsNationaal.csv', self.verbindingen_lijst)
+        
         # maakt de output directory
-        if algo == 'R':
+        if keuze_algo == 'R':
+            algo = Random(self.stations_lijst, self.verbindingen_lijst)
             output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Data', 'outputs', 'random_Nationaal')
-        if algo == 'G':
+        if keuze_algo == 'G':
+            algo = Greedy(self.stations_lijst, self.verbindingen_lijst)
             output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Data', 'outputs', 'greedy')
         count = 0
         
 
         # Voert de simulatie x aantal keer uit 
-        for count in range(1, 100000 ):  
+        for count in range(1, 10):  
             print(count) # Houd bij bij welke itteratie we zijn 
             count =+ 1
 
