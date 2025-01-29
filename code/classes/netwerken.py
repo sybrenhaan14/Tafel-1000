@@ -1,8 +1,7 @@
 import random
-from algoritmes import *
-from traject import *
-from stations import *
-from Greedy import *
+from .algoritmes import Algoritme, Random, Greedy
+from .traject import Traject
+from .stations import Stations
 
 # Klasse om netwerk van trajecten te beheren
 class Netwerk:

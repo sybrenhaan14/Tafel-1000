@@ -1,4 +1,4 @@
-from verbindingen import Verbindingen
+from .verbindingen import Verbindingen
 
 class Traject:
     def __init__(self, traject_id):

@@ -1,5 +1,5 @@
 import csv
-from verbindingen import *
+from .verbindingen import Verbindingen, Verbinding
 
 class Station:
     def __init__(self, naam, y, x, opties): 
