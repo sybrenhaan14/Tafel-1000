@@ -1,9 +1,9 @@
 train,stations
-train_1,"[Amsterdam Zuid, Amsterdam Sloterdijk, Haarlem, Heemstede-Aerdenhout, Leiden Centraal, Alphen a/d Rijn, Gouda, Alphen a/d Rijn, Leiden Centraal]"
-train_2,"[Alkmaar, Castricum, Zaandam, Hoorn, Alkmaar, Hoorn]"
-train_3,"[Den Helder, Alkmaar, Hoorn, Alkmaar]"
-train_4,"[Haarlem, Amsterdam Sloterdijk, Haarlem, Amsterdam Sloterdijk, Haarlem, Heemstede-Aerdenhout, Leiden Centraal, Alphen a/d Rijn, Leiden Centraal, Alphen a/d Rijn, Leiden Centraal]"
-train_5,"[Hoorn, Alkmaar, Hoorn, Zaandam, Beverwijk, Castricum]"
-train_6,"[Zaandam, Hoorn, Alkmaar, Hoorn, Zaandam]"
-train_7,"[Alkmaar, Hoorn, Zaandam, Hoorn, Alkmaar]"
+train_1,"[Alkmaar, Hoorn, Alkmaar, Castricum, Beverwijk, Castricum, Alkmaar]"
+train_2,"[Rotterdam Centraal, Dordrecht, Rotterdam Centraal, Rotterdam Alexander, Rotterdam Centraal, Schiedam Centrum, Delft, Schiedam Centrum, Rotterdam Centraal, Dordrecht, Rotterdam Centraal, Schiedam Centrum]"
+train_3,"[Schiedam Centrum, Rotterdam Centraal, Dordrecht, Rotterdam Centraal, Rotterdam Alexander, Rotterdam Centraal, Schiedam Centrum, Delft, Schiedam Centrum, Rotterdam Centraal, Dordrecht, Rotterdam Centraal]"
+train_4,"[Amsterdam Zuid, Schiphol Airport, Leiden Centraal, Den Haag Centraal, Delft, Schiedam Centrum, Rotterdam Centraal, Schiedam Centrum, Rotterdam Centraal, Dordrecht, Rotterdam Centraal, Schiedam Centrum, Delft]"
+train_5,"[Castricum, Alkmaar, Castricum, Alkmaar, Den Helder, Alkmaar]"
+train_6,"[Rotterdam Centraal, Dordrecht, Rotterdam Centraal, Dordrecht, Rotterdam Centraal, Rotterdam Alexander, Rotterdam Centraal, Schiedam Centrum, Delft, Schiedam Centrum, Rotterdam Centraal, Schiedam Centrum, Rotterdam Centraal]"
+train_7,"[Castricum, Alkmaar, Den Helder, Alkmaar, Castricum, Zaandam]"
 score,3184.857142857143

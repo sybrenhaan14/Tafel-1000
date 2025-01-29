@@ -1,0 +1,9 @@
+train,stations
+train_1,"[Beverwijk, Castricum, Alkmaar, Castricum, Alkmaar, Castricum, Alkmaar, Castricum, Alkmaar, Castricum, Alkmaar, Castricum, Alkmaar]"
+train_2,"[Alphen a/d Rijn, Leiden Centraal, Den Haag Centraal, Leiden Centraal, Den Haag Centraal, Leiden Centraal, Den Haag Centraal, Leiden Centraal, Den Haag Centraal, Leiden Centraal]"
+train_3,"[Alphen a/d Rijn, Leiden Centraal, Den Haag Centraal, Leiden Centraal, Den Haag Centraal, Leiden Centraal, Den Haag Centraal, Leiden Centraal, Den Haag Centraal, Leiden Centraal]"
+train_4,"[Haarlem, Heemstede-Aerdenhout, Haarlem, Heemstede-Aerdenhout, Haarlem, Heemstede-Aerdenhout, Haarlem, Heemstede-Aerdenhout, Haarlem, Heemstede-Aerdenhout, Haarlem, Heemstede-Aerdenhout, Haarlem, Heemstede-Aerdenhout, Haarlem, Heemstede-Aerdenhout, Haarlem, Heemstede-Aerdenhout, Haarlem, Heemstede-Aerdenhout]"
+train_5,"[Den Helder, Alkmaar, Castricum, Alkmaar, Castricum, Alkmaar, Castricum, Alkmaar, Castricum, Alkmaar, Castricum]"
+train_6,"[Rotterdam Alexander, Rotterdam Centraal, Schiedam Centrum, Rotterdam Centraal, Schiedam Centrum, Rotterdam Centraal, Schiedam Centrum, Rotterdam Centraal, Schiedam Centrum, Rotterdam Centraal, Schiedam Centrum, Rotterdam Centraal, Schiedam Centrum, Rotterdam Centraal, Schiedam Centrum, Rotterdam Centraal, Schiedam Centrum, Rotterdam Centraal, Schiedam Centrum, Rotterdam Centraal, Schiedam Centrum, Rotterdam Centraal, Schiedam Centrum, Rotterdam Centraal]"
+train_7,"[Beverwijk, Castricum, Alkmaar, Castricum, Alkmaar, Castricum, Alkmaar, Castricum, Alkmaar, Castricum, Alkmaar, Castricum, Alkmaar]"
+score,1358.1428571428569

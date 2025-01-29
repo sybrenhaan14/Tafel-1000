@@ -1,9 +1,9 @@
 train,stations
-train_1,"[Den Helder, Alkmaar, Den Helder, Alkmaar, Castricum]"
-train_2,"[Leiden Centraal, Alphen a/d Rijn, Leiden Centraal, Den Haag Centraal, Gouda, Rotterdam Alexander, Gouda, Alphen a/d Rijn, Gouda]"
-train_3,"[Alkmaar, Den Helder, Alkmaar, Castricum, Alkmaar, Hoorn]"
-train_4,"[Rotterdam Alexander, Gouda, Rotterdam Alexander, Gouda, Rotterdam Alexander, Gouda, Den Haag Centraal, Gouda, Den Haag Centraal, Leiden Centraal]"
-train_5,"[Leiden Centraal, Den Haag Centraal, Delft, Schiedam Centrum, Delft, Schiedam Centrum, Delft, Schiedam Centrum, Rotterdam Centraal, Dordrecht, Rotterdam Centraal, Rotterdam Alexander, Rotterdam Centraal]"
-train_6,"[Rotterdam Centraal, Rotterdam Alexander, Rotterdam Centraal, Rotterdam Alexander, Rotterdam Centraal, Schiedam Centrum, Rotterdam Centraal, Rotterdam Alexander, Gouda, Alphen a/d Rijn, Gouda, Den Haag Centraal]"
-train_7,"[Dordrecht, Rotterdam Centraal, Schiedam Centrum, Delft, Schiedam Centrum, Rotterdam Centraal, Schiedam Centrum, Delft, Schiedam Centrum, Delft, Schiedam Centrum, Rotterdam Centraal, Rotterdam Alexander, Gouda, Alphen a/d Rijn]"
+train_1,"[Gouda, Den Haag Centraal, Gouda, Rotterdam Alexander, Rotterdam Centraal, Schiedam Centrum, Rotterdam Centraal, Rotterdam Alexander, Gouda, Rotterdam Alexander, Gouda]"
+train_2,"[Den Helder, Alkmaar, Castricum, Alkmaar, Castricum, Zaandam, Beverwijk, Castricum]"
+train_3,"[Schiedam Centrum, Delft, Schiedam Centrum, Delft, Schiedam Centrum, Rotterdam Centraal, Rotterdam Alexander, Rotterdam Centraal, Schiedam Centrum, Rotterdam Centraal, Rotterdam Alexander, Rotterdam Centraal, Dordrecht, Rotterdam Centraal, Schiedam Centrum]"
+train_4,"[Dordrecht, Rotterdam Centraal, Dordrecht, Rotterdam Centraal, Dordrecht, Rotterdam Centraal, Dordrecht, Rotterdam Centraal]"
+train_5,"[Alkmaar, Den Helder, Alkmaar, Castricum, Zaandam, Hoorn]"
+train_6,"[Alphen a/d Rijn, Gouda, Alphen a/d Rijn, Gouda, Rotterdam Alexander, Rotterdam Centraal, Rotterdam Alexander, Gouda, Alphen a/d Rijn]"
+train_7,"[Rotterdam Centraal, Dordrecht, Rotterdam Centraal, Rotterdam Alexander, Rotterdam Centraal, Dordrecht, Rotterdam Centraal, Dordrecht, Rotterdam Centraal]"
 score,3127.857142857143

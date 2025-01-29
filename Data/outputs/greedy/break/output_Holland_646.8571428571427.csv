@@ -1,0 +1,9 @@
+train,stations
+train_1,"[Alphen a/d Rijn, Leiden Centraal, Den Haag Centraal, Leiden Centraal, Den Haag Centraal, Leiden Centraal, Den Haag Centraal, Leiden Centraal, Den Haag Centraal, Leiden Centraal]"
+train_2,"[Alkmaar, Castricum, Alkmaar, Castricum, Alkmaar, Castricum, Alkmaar, Castricum, Alkmaar, Castricum, Alkmaar, Castricum, Alkmaar, Castricum]"
+train_3,"[Alphen a/d Rijn, Leiden Centraal, Den Haag Centraal, Leiden Centraal, Den Haag Centraal, Leiden Centraal, Den Haag Centraal, Leiden Centraal, Den Haag Centraal, Leiden Centraal]"
+train_4,"[Den Helder, Alkmaar, Castricum, Alkmaar, Castricum, Alkmaar, Castricum, Alkmaar, Castricum, Alkmaar, Castricum]"
+train_5,"[Amsterdam Centraal, Amsterdam Sloterdijk, Amsterdam Centraal, Amsterdam Sloterdijk, Amsterdam Centraal, Amsterdam Sloterdijk, Amsterdam Centraal, Amsterdam Sloterdijk, Amsterdam Centraal, Amsterdam Sloterdijk, Amsterdam Centraal, Amsterdam Sloterdijk, Amsterdam Centraal, Amsterdam Sloterdijk, Amsterdam Centraal, Amsterdam Sloterdijk, Amsterdam Centraal, Amsterdam Sloterdijk, Amsterdam Centraal, Amsterdam Sloterdijk]"
+train_6,"[Alphen a/d Rijn, Leiden Centraal, Den Haag Centraal, Leiden Centraal, Den Haag Centraal, Leiden Centraal, Den Haag Centraal, Leiden Centraal, Den Haag Centraal, Leiden Centraal]"
+train_7,"[Beverwijk, Castricum, Alkmaar, Castricum, Alkmaar, Castricum, Alkmaar, Castricum, Alkmaar, Castricum, Alkmaar, Castricum, Alkmaar]"
+score,646.8571428571427

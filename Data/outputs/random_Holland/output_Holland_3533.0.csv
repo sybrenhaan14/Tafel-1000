@@ -1,9 +1,9 @@
 train,stations
-train_1,"[Den Helder, Alkmaar, Hoorn, Alkmaar, Hoorn]"
-train_2,"[Amsterdam Zuid, Schiphol Airport, Leiden Centraal, Schiphol Airport, Leiden Centraal, Schiphol Airport, Leiden Centraal, Heemstede-Aerdenhout, Haarlem, Heemstede-Aerdenhout, Haarlem]"
-train_3,"[Delft, Den Haag Centraal, Gouda, Den Haag Centraal, Delft, Den Haag Centraal, Gouda, Rotterdam Alexander, Gouda]"
-train_4,"[Den Haag Centraal, Gouda, Den Haag Centraal, Leiden Centraal, Schiphol Airport, Leiden Centraal, Den Haag Centraal, Leiden Centraal, Den Haag Centraal]"
-train_5,"[Delft, Den Haag Centraal, Leiden Centraal, Schiphol Airport, Amsterdam Zuid, Amsterdam Amstel, Amsterdam Centraal, Amsterdam Amstel, Amsterdam Zuid, Amsterdam Amstel, Amsterdam Centraal, Amsterdam Sloterdijk]"
-train_6,"[Heemstede-Aerdenhout, Leiden Centraal, Den Haag Centraal, Delft, Den Haag Centraal, Leiden Centraal, Den Haag Centraal, Gouda, Den Haag Centraal]"
-train_7,"[Schiphol Airport, Amsterdam Zuid, Amsterdam Sloterdijk, Amsterdam Centraal, Amsterdam Amstel, Amsterdam Zuid, Schiphol Airport, Leiden Centraal, Den Haag Centraal, Leiden Centraal, Den Haag Centraal]"
+train_1,"[Den Haag Centraal, Delft, Den Haag Centraal, Delft, Den Haag Centraal, Gouda, Den Haag Centraal, Leiden Centraal, Heemstede-Aerdenhout, Haarlem]"
+train_2,"[Gouda, Rotterdam Alexander, Rotterdam Centraal, Schiedam Centrum, Delft, Schiedam Centrum, Delft, Schiedam Centrum, Rotterdam Centraal, Schiedam Centrum, Delft, Schiedam Centrum, Delft, Den Haag Centraal, Delft, Schiedam Centrum]"
+train_3,"[Hoorn, Alkmaar, Den Helder, Alkmaar]"
+train_4,"[Alphen a/d Rijn, Leiden Centraal, Alphen a/d Rijn, Leiden Centraal, Alphen a/d Rijn, Gouda, Den Haag Centraal, Leiden Centraal, Den Haag Centraal]"
+train_5,"[Den Helder, Alkmaar, Castricum, Alkmaar, Den Helder]"
+train_6,"[Heemstede-Aerdenhout, Leiden Centraal, Den Haag Centraal, Gouda, Alphen a/d Rijn, Leiden Centraal, Alphen a/d Rijn, Leiden Centraal, Heemstede-Aerdenhout]"
+train_7,"[Rotterdam Alexander, Gouda, Rotterdam Alexander, Gouda, Alphen a/d Rijn, Gouda, Rotterdam Alexander, Gouda, Rotterdam Alexander, Gouda]"
 score,3533.0

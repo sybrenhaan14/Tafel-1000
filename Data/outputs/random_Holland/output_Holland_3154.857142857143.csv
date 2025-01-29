@@ -1,9 +1,9 @@
 train,stations
-train_1,"[Schiedam Centrum, Delft, Schiedam Centrum, Rotterdam Centraal, Rotterdam Alexander, Rotterdam Centraal, Rotterdam Alexander, Gouda, Den Haag Centraal, Gouda, Alphen a/d Rijn]"
-train_2,"[Zaandam, Castricum, Alkmaar, Castricum, Zaandam, Hoorn, Alkmaar, Hoorn]"
-train_3,"[Rotterdam Alexander, Gouda, Alphen a/d Rijn, Gouda, Rotterdam Alexander, Rotterdam Centraal, Schiedam Centrum, Delft, Schiedam Centrum, Rotterdam Centraal, Rotterdam Alexander, Gouda, Rotterdam Alexander]"
-train_4,"[Dordrecht, Rotterdam Centraal, Rotterdam Alexander, Rotterdam Centraal, Dordrecht, Rotterdam Centraal, Rotterdam Alexander, Gouda, Den Haag Centraal]"
-train_5,"[Rotterdam Centraal, Rotterdam Alexander, Rotterdam Centraal, Schiedam Centrum, Delft, Schiedam Centrum, Rotterdam Centraal, Rotterdam Alexander, Gouda, Alphen a/d Rijn, Gouda, Den Haag Centraal]"
-train_6,"[Castricum, Zaandam, Beverwijk, Zaandam, Hoorn, Zaandam]"
-train_7,"[Alphen a/d Rijn, Gouda, Alphen a/d Rijn, Gouda, Rotterdam Alexander, Rotterdam Centraal, Dordrecht, Rotterdam Centraal]"
+train_1,"[Dordrecht, Rotterdam Centraal, Dordrecht, Rotterdam Centraal, Schiedam Centrum, Delft, Den Haag Centraal, Delft, Den Haag Centraal, Delft]"
+train_2,"[Rotterdam Alexander, Gouda, Rotterdam Alexander, Gouda, Alphen a/d Rijn, Leiden Centraal, Heemstede-Aerdenhout, Leiden Centraal, Alphen a/d Rijn, Leiden Centraal]"
+train_3,"[Schiedam Centrum, Delft, Den Haag Centraal, Delft, Schiedam Centrum, Delft, Den Haag Centraal, Delft, Den Haag Centraal, Delft, Schiedam Centrum, Delft]"
+train_4,"[Alkmaar, Hoorn, Alkmaar, Hoorn, Alkmaar]"
+train_5,"[Den Haag Centraal, Gouda, Rotterdam Alexander, Rotterdam Centraal, Schiedam Centrum, Delft, Den Haag Centraal, Gouda, Rotterdam Alexander, Rotterdam Centraal, Rotterdam Alexander, Gouda]"
+train_6,"[Rotterdam Centraal, Rotterdam Alexander, Gouda, Alphen a/d Rijn, Gouda, Rotterdam Alexander, Gouda, Rotterdam Alexander, Rotterdam Centraal, Rotterdam Alexander, Gouda]"
+train_7,"[Heemstede-Aerdenhout, Haarlem, Heemstede-Aerdenhout, Leiden Centraal, Den Haag Centraal, Gouda, Alphen a/d Rijn, Gouda, Rotterdam Alexander, Gouda]"
 score,3154.857142857143

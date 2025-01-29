@@ -1,9 +1,9 @@
 train,stations
-train_1,"[Leiden Centraal, Den Haag Centraal, Gouda, Rotterdam Alexander, Rotterdam Centraal, Rotterdam Alexander, Rotterdam Centraal, Schiedam Centrum, Delft, Schiedam Centrum, Rotterdam Centraal, Rotterdam Alexander, Gouda]"
-train_2,"[Schiphol Airport, Leiden Centraal, Heemstede-Aerdenhout, Haarlem, Beverwijk, Zaandam, Castricum, Beverwijk, Castricum]"
-train_3,"[Haarlem, Amsterdam Sloterdijk, Haarlem, Amsterdam Sloterdijk, Amsterdam Centraal, Amsterdam Amstel, Amsterdam Centraal, Amsterdam Amstel, Amsterdam Centraal, Amsterdam Sloterdijk, Haarlem, Amsterdam Sloterdijk, Haarlem]"
-train_4,"[Beverwijk, Haarlem, Beverwijk, Zaandam, Hoorn, Alkmaar, Castricum]"
-train_5,"[Haarlem, Amsterdam Sloterdijk, Zaandam, Castricum, Alkmaar, Castricum, Alkmaar, Den Helder]"
-train_6,"[Hoorn, Zaandam, Beverwijk, Zaandam, Hoorn]"
-train_7,"[Delft, Den Haag Centraal, Gouda, Alphen a/d Rijn, Leiden Centraal, Alphen a/d Rijn, Leiden Centraal, Den Haag Centraal]"
+train_1,"[Alphen a/d Rijn, Gouda, Rotterdam Alexander, Gouda, Rotterdam Alexander, Gouda, Alphen a/d Rijn, Leiden Centraal, Den Haag Centraal, Delft]"
+train_2,"[Castricum, Beverwijk, Zaandam, Hoorn, Zaandam, Amsterdam Sloterdijk, Zaandam]"
+train_3,"[Amsterdam Centraal, Amsterdam Amstel, Amsterdam Centraal, Amsterdam Sloterdijk, Amsterdam Centraal, Amsterdam Sloterdijk, Amsterdam Zuid, Schiphol Airport, Amsterdam Zuid, Amsterdam Sloterdijk, Haarlem, Beverwijk]"
+train_4,"[Zaandam, Hoorn, Alkmaar, Den Helder]"
+train_5,"[Amsterdam Amstel, Amsterdam Zuid, Amsterdam Amstel, Amsterdam Centraal, Amsterdam Sloterdijk, Haarlem, Beverwijk, Zaandam, Beverwijk]"
+train_6,"[Rotterdam Alexander, Rotterdam Centraal, Rotterdam Alexander, Gouda, Den Haag Centraal, Gouda, Rotterdam Alexander, Rotterdam Centraal, Schiedam Centrum, Rotterdam Centraal, Dordrecht]"
+train_7,"[Heemstede-Aerdenhout, Leiden Centraal, Heemstede-Aerdenhout, Haarlem, Heemstede-Aerdenhout, Haarlem, Amsterdam Sloterdijk, Zaandam, Amsterdam Sloterdijk, Zaandam, Amsterdam Sloterdijk, Amsterdam Zuid, Amsterdam Amstel, Amsterdam Zuid]"
 score,7128.428571428571

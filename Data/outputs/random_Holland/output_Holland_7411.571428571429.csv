@@ -1,9 +1,9 @@
 train,stations
-train_1,"[Alkmaar, Castricum, Alkmaar, Hoorn, Zaandam, Amsterdam Sloterdijk, Amsterdam Centraal, Amsterdam Sloterdijk, Amsterdam Zuid, Amsterdam Sloterdijk]"
-train_2,"[Alkmaar, Castricum, Alkmaar, Hoorn, Alkmaar, Den Helder]"
-train_3,"[Amsterdam Sloterdijk, Amsterdam Zuid, Amsterdam Sloterdijk, Haarlem, Beverwijk, Zaandam, Castricum, Zaandam, Amsterdam Sloterdijk]"
-train_4,"[Heemstede-Aerdenhout, Haarlem, Amsterdam Sloterdijk, Amsterdam Centraal, Amsterdam Sloterdijk, Haarlem, Amsterdam Sloterdijk, Zaandam, Amsterdam Sloterdijk, Amsterdam Zuid, Amsterdam Amstel, Amsterdam Zuid, Schiphol Airport]"
-train_5,"[Haarlem, Heemstede-Aerdenhout, Leiden Centraal, Alphen a/d Rijn, Gouda, Alphen a/d Rijn, Gouda, Rotterdam Alexander, Gouda]"
-train_6,"[Rotterdam Centraal, Dordrecht, Rotterdam Centraal, Dordrecht, Rotterdam Centraal, Schiedam Centrum, Delft, Den Haag Centraal, Leiden Centraal, Alphen a/d Rijn]"
-train_7,"[Rotterdam Alexander, Rotterdam Centraal, Schiedam Centrum, Delft, Schiedam Centrum, Delft, Schiedam Centrum, Rotterdam Centraal, Dordrecht, Rotterdam Centraal, Schiedam Centrum, Delft, Schiedam Centrum, Delft, Schiedam Centrum, Rotterdam Centraal]"
+train_1,"[Heemstede-Aerdenhout, Haarlem, Beverwijk, Zaandam, Beverwijk, Castricum, Alkmaar, Hoorn]"
+train_2,"[Rotterdam Alexander, Rotterdam Centraal, Rotterdam Alexander, Rotterdam Centraal, Dordrecht, Rotterdam Centraal, Schiedam Centrum, Delft, Schiedam Centrum, Rotterdam Centraal, Dordrecht, Rotterdam Centraal]"
+train_3,"[Den Helder, Alkmaar, Hoorn, Alkmaar]"
+train_4,"[Schiedam Centrum, Delft, Den Haag Centraal, Gouda, Den Haag Centraal, Delft, Den Haag Centraal, Delft, Schiedam Centrum, Delft]"
+train_5,"[Gouda, Rotterdam Alexander, Gouda, Alphen a/d Rijn, Leiden Centraal, Alphen a/d Rijn, Gouda, Den Haag Centraal, Leiden Centraal]"
+train_6,"[Amsterdam Sloterdijk, Amsterdam Centraal, Amsterdam Sloterdijk, Haarlem, Amsterdam Sloterdijk, Zaandam, Amsterdam Sloterdijk, Haarlem, Amsterdam Sloterdijk, Amsterdam Zuid, Amsterdam Amstel, Amsterdam Centraal, Amsterdam Sloterdijk, Haarlem]"
+train_7,"[Alkmaar, Castricum, Zaandam, Castricum, Beverwijk, Haarlem, Heemstede-Aerdenhout, Haarlem, Heemstede-Aerdenhout, Haarlem, Heemstede-Aerdenhout, Leiden Centraal, Alphen a/d Rijn]"
 score,7411.571428571429
