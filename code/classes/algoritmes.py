@@ -6,6 +6,8 @@ class Algoritme(ABC):
         self.stations_lijst = stations_lijst
         self.verbindingen_lijst = verbindingen_lijst
 
+    # dit gevonden op stackoverflow, zorgt ervoor dat de child klasse niet gemaakt kan worden
+    # zonder dat alle methodes ook in de child klasse staan
     @abstractmethod
     def kies_startstation(self, bezochte_stations):
         # Selecteert een startstation op basis van het algoritme
