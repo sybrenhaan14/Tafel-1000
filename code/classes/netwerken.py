@@ -40,6 +40,10 @@ class Lijnvoering:
         trajecten = 0
 
         while trajecten < self.max_trajecten:
+
+            if self.netwerk.alle_verbindingen_bereikt(self.verbindingen_lijst):
+                break  # Stop de while-loop
+
             traject = Traject(trajecten + 1)
             start_station = algo.kies_startstation(self.netwerk.bezochte_stations)
             self.voeg_verbindingen_toe(start_station, traject, algo)
@@ -72,8 +76,8 @@ class Lijnvoering:
             opties_huidig_station = self.stations_set.geef_opties(huidig_station.naam)
             volgende_station = algo.kies_volgende_station(huidig_station, opties_huidig_station, self.netwerk.gereden_verbindingen)
             verbinding = self.verbindingen_lijst.zoek_verbinding(huidig_station.naam, volgende_station.naam)
-
-            if verbinding:
+            
+            if not verbinding:
                 break
 
             # Checkt of de tijdslimiet wordt overstreden
