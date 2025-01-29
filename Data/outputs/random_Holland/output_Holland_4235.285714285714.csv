@@ -1,0 +1,9 @@
+train,stations
+train_1,"[Beverwijk, Zaandam, Hoorn, Alkmaar, Hoorn]"
+train_2,"[Amsterdam Amstel, Amsterdam Zuid, Amsterdam Sloterdijk, Amsterdam Zuid, Amsterdam Amstel, Amsterdam Zuid, Amsterdam Sloterdijk, Haarlem, Heemstede-Aerdenhout, Haarlem, Heemstede-Aerdenhout]"
+train_3,"[Amsterdam Amstel, Amsterdam Zuid, Amsterdam Amstel, Amsterdam Centraal, Amsterdam Sloterdijk, Haarlem, Heemstede-Aerdenhout, Leiden Centraal, Heemstede-Aerdenhout, Leiden Centraal, Alphen a/d Rijn]"
+train_4,"[Leiden Centraal, Alphen a/d Rijn, Gouda, Alphen a/d Rijn, Gouda, Alphen a/d Rijn, Gouda]"
+train_5,"[Den Helder, Alkmaar, Castricum, Alkmaar, Hoorn, Alkmaar, Castricum]"
+train_6,"[Castricum, Alkmaar, Hoorn, Zaandam, Hoorn, Zaandam]"
+train_7,"[Amsterdam Sloterdijk, Haarlem, Beverwijk, Zaandam, Hoorn, Zaandam, Amsterdam Sloterdijk, Zaandam]"
+score,4235.285714285714

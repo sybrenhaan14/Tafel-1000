@@ -1,0 +1,9 @@
+train,stations
+train_1,"[Amsterdam Amstel, Amsterdam Centraal, Amsterdam Amstel, Amsterdam Zuid, Schiphol Airport, Amsterdam Zuid, Schiphol Airport, Amsterdam Zuid, Schiphol Airport, Amsterdam Zuid, Schiphol Airport, Leiden Centraal, Heemstede-Aerdenhout, Haarlem, Beverwijk]"
+train_2,"[Amsterdam Centraal, Amsterdam Sloterdijk, Zaandam, Castricum, Zaandam, Hoorn, Zaandam, Castricum, Alkmaar, Castricum]"
+train_3,"[Hoorn, Alkmaar, Hoorn, Zaandam, Beverwijk, Castricum]"
+train_4,"[Schiedam Centrum, Rotterdam Centraal, Dordrecht, Rotterdam Centraal, Schiedam Centrum, Delft, Schiedam Centrum, Delft, Den Haag Centraal, Gouda, Rotterdam Alexander, Rotterdam Centraal, Schiedam Centrum]"
+train_5,"[Den Helder, Alkmaar, Hoorn, Alkmaar]"
+train_6,"[Schiphol Airport, Amsterdam Zuid, Amsterdam Amstel, Amsterdam Centraal, Amsterdam Sloterdijk, Amsterdam Zuid, Schiphol Airport, Leiden Centraal, Den Haag Centraal, Delft, Schiedam Centrum, Delft, Schiedam Centrum]"
+train_7,"[Amsterdam Sloterdijk, Amsterdam Zuid, Amsterdam Amstel, Amsterdam Zuid, Schiphol Airport, Leiden Centraal, Alphen a/d Rijn, Leiden Centraal, Schiphol Airport, Amsterdam Zuid, Amsterdam Amstel]"
+score,7762.714285714286
