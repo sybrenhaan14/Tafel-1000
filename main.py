@@ -1,8 +1,8 @@
-import random
-from stations import *
-from verbindingen import *
-from netwerken import *
-from traject import *
+from code.classes.stations import Station, Stations
+from code.classes.verbindingen import Verbindingen, Verbinding
+from code.classes.netwerken import Netwerk, Lijnvoering
+from code.classes.traject import Traject
+from code.classes.algoritmes import Random, Greedy
 import os 
 import csv
 
@@ -65,24 +65,24 @@ class Main:
         keuze_algo = self.keuze_random_of_greedy()
 
         if regio == 'H':
-            self.verbindingen_lijst = Verbindingen('../../Data/import_csv/ConnectiesHolland.csv')
-            self.stations_lijst = Stations('../../Data/import_csv/StationsHolland.csv', self.verbindingen_lijst)
+            self.verbindingen_lijst = Verbindingen('Data/import_csv/ConnectiesHolland.csv')
+            self.stations_lijst = Stations('Data/import_csv/StationsHolland.csv', self.verbindingen_lijst)
         elif regio == 'N':
-            self.verbindingen_lijst = Verbindingen('../../Data/import_csv/ConnectiesNationaal.csv')
-            self.stations_lijst = Stations('../../Data/import_csv/StationsNationaal.csv', self.verbindingen_lijst)
+            self.verbindingen_lijst = Verbindingen('Data/import_csv/ConnectiesNationaal.csv')
+            self.stations_lijst = Stations('Data/import_csv/StationsNationaal.csv', self.verbindingen_lijst)
         
         # maakt de output directory
         if keuze_algo == 'R':
             algo = Random(self.stations_lijst, self.verbindingen_lijst)
-            output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Data', 'outputs', 'random_Nationaal')
+            output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Data', 'outputs', 'random_Nationaal')
         if keuze_algo == 'G':
             algo = Greedy(self.stations_lijst, self.verbindingen_lijst)
-            output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Data', 'outputs', 'greedy', 'break')
+            output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Data', 'outputs', 'greedy', 'break')
         count = 0
         
 
         # Voert de simulatie x aantal keer uit 
-        for count in range(1, 10000):  
+        for count in range(1, 10):  
             print(count) # Houd bij bij welke itteratie we zijn 
             count =+ 1
 
