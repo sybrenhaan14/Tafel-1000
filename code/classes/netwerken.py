@@ -22,10 +22,12 @@ class Netwerk:
 # Klasse om trajecten te generern
 class Lijnvoering:
     def __init__(self, stations_set, verbindingen_lijst, regio):
+        # set de station lijst en verbindingen lijst en maak een netwerk
         self.stations_set = stations_set
         self.verbindingen_lijst = verbindingen_lijst
         self.netwerk = Netwerk()
 
+        # zet de limieten voor de regio
         if regio == 'H':
             self.tijdslimiet = 120
             self.max_trajecten = 7
@@ -54,16 +56,6 @@ class Lijnvoering:
 
         return self.netwerk
 
-    # Kiest een station dat nog niet eerder is bezocht
-    def kies_startstation(self, algo):
-        if algo == 'G':
-            niet_bezocht = [item for item in self.stations_set.stations if item not in self.netwerk.bezochte_stations]
-            if niet_bezocht:
-                return random.choice(niet_bezocht)
-            else:
-                return random.choice(self.stations_set.stations)
-        if algo == 'R':
-            return random.choice(self.stations_set.stations)
 
     # Voegt verbindingen toe aan traject todat de tijdslimiet is bereikt
     def voeg_verbindingen_toe(self, huidig_station, traject, algo):
@@ -77,37 +69,19 @@ class Lijnvoering:
             volgende_station = algo.kies_volgende_station(huidig_station, opties_huidig_station, self.netwerk.gereden_verbindingen)
             verbinding = self.verbindingen_lijst.zoek_verbinding(huidig_station.naam, volgende_station.naam)
             
+            # als er geen verbinding is
             if not verbinding:
                 break
 
             # Checkt of de tijdslimiet wordt overstreden
             if traject.traject_tijd + verbinding.tijd > self.tijdslimiet:
                 break
+            # voeg de verbinding toe, maakt volgende station huidig station
             traject.voeg_verbinding_toe(verbinding, self.netwerk.gereden_verbindingen) # Voegt de verbinding toe aan traject
             huidig_station = volgende_station
             if self.netwerk.alle_verbindingen_bereikt(self.verbindingen_lijst):
                 break
 
-
-    # Controleert welke verbindingen nog niet zijn bezocht
-    def controleer_niet_bezochte_verbindingen(self):
-        # Houd een set bij van bezochte verbindingen
-        bezochte_verbindingen = set()
-        for traject in self.netwerk.netwerk:
-            for verbinding in traject.traject:
-                # Voeg elke bezochte verbinding toe als een tuple (station1, station2)
-                bezochte_verbindingen.add((verbinding.station1, verbinding.station2))
-                bezochte_verbindingen.add((verbinding.station2, verbinding.station1))  # Beide richtingen
-
-        # Maak een set van alle verbindingen
-        alle_verbindingen = set(
-            (v.station1, v.station2) for v in self.verbindingen_lijst.verbindingen
-        )
-
-        # Bepaal de niet bezochte verbindingen
-        niet_bezochte_verbindingen = alle_verbindingen - bezochte_verbindingen
-
-        return niet_bezochte_verbindingen
 
         
     def bereken_score(self, netwerk, verbindingen_lijst):

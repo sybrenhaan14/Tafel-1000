@@ -5,7 +5,7 @@ class Verbinding:
         self.station1 = station1
         self.station2 = station2
         self.tijd = int(tijd)
-        self.id = id
+        self.id = id # individuele id voor elke verbinding
 
     def __repr__(self):
         # De string die de verbinding beschrijft

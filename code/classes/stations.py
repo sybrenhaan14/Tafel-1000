@@ -62,8 +62,3 @@ class Stations:
                 #     print(optie.naam)
                 return station.opties
 
-# verbindingen = Verbindingen()
-# stations_obj = Stations('/mnt/c/Users/sybre/OneDrive/Documenten/Minor_prog/A_H/Tafel-1000/Data/StationsHolland.csv', verbindingen)
-
-# station_naam = 'Hoorn'
-# opties = stations_obj.geef_opties(station_naam)
