@@ -26,9 +26,13 @@ Voordat we dit voor heel Nederland hebben gedaan, hebben we op basis van een dat
 - **Random_algo:** Voor elk station is eerder een lijst met opties samengesteld, uit deze opties wordt doormiddel van een random algoritme gekozen. De code hiervoor bevindt zich in deze class.
 - **Greedy:** In deze class wordt gebruik gemaakt van het Greedy algoritme. In de lijst met opties wordt gecontroleerd of de verbinding al is gereden en als dit niet zo is wordt het station gekozen en wordt de verbinding toegevoegd aan de lijst met gereden verbindingen.
 
+### Gebruik
+Een voorbeeld van het runnen van het is, dan krijg je een popup voor het welke regio je wil runnen en dan voor welk algoritme je wil runnen. Ook kunnen je in de code zelf aanpassen hoe vaak je het wil runnen.
+`python main.py`
+
 ### Visualisatie
 
-In de map code bevindt zich ook een file met de code van de visualisaties. We hebben verschillende visualisaties die ons project ondersteunen. Zo zijn er twee kaarten met alle verbindingen. De eerste kaart bevat een afbeelding van Holland met alle verbindingen en de tweede kaart is een kaart van heel Nederland met alle verbindingen die zich hierin bevinden. Tot slot hebben we een kaart gemaakt met de lijnvoering van het netwerk met de hoogste score, oftewel het beste netwerk. 
+In de map code bevindt zich ook een file met de code van de visualisaties. We hebben verschillende visualisaties die ons project ondersteunen. Zo zijn er twee kaarten met alle verbindingen. De eerste kaart bevat een afbeelding van Holland met alle verbindingen en de tweede kaart is een kaart van heel Nederland met alle verbindingen die zich hierin bevinden. Tot slot hebben we een kaart gemaakt met de lijnvoering van het netwerk met de hoogste score, oftewel het beste netwerk.
 
 ## 3 Verloop & argumentatie
 
