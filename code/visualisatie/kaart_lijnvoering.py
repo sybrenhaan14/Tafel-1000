@@ -6,8 +6,8 @@ from itertools import cycle
 import random
 
 # Laad de data
-trein_data = pd.read_csv("../../Data/outputs/random_Nationaal/output_Nationaal_3983.8426966292136.csv")
-stations_data = pd.read_csv("../../Data/import_csv/StationsNationaal.csv")
+trein_data = pd.read_csv("../../Data/outputs/random_Holland/output_Holland_8638.0.csv")
+stations_data = pd.read_csv("../../Data/import_csv/StationsHolland.csv")
 
 # Maak een dictionary voor coördinaten
 stations_dict = {}
@@ -97,6 +97,6 @@ for _, station_row in stations_data.iterrows():
     ).add_to(trein_kaart)
 
 # Sla de kaart op
-trein_kaart.save("../../Docs/kaart_lijnvoering_nationaal.html")
+trein_kaart.save("../../Docs/kaart_lijnvoering_Holland.html")
 
 
