@@ -74,15 +74,15 @@ class Main:
         # maakt de output directory
         if keuze_algo == 'R':
             algo = Random(self.stations_lijst, self.verbindingen_lijst)
-            output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Data', 'outputs', 'random_Nationaal')
+            output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Data', 'outputs', 'random_Holland')
         if keuze_algo == 'G':
             algo = Greedy(self.stations_lijst, self.verbindingen_lijst)
-            output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Data', 'outputs', 'greedy', 'break')
+            output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Data', 'outputs', 'greedy', 'break', 'Holland')
         count = 0
         
 
         # Voert de simulatie x aantal keer uit 
-        for count in range(1, 10):  
+        for count in range(1, 100000):  
             print(count) # Houd bij bij welke itteratie we zijn 
             count =+ 1
 
