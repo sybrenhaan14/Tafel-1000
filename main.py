@@ -74,7 +74,7 @@ class Main:
         # maakt de output directory
         if keuze_algo == 'R':
             algo = Random(self.stations_lijst, self.verbindingen_lijst)
-            output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Data', 'outputs', 'random_Holland')
+            output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Data', 'outputs', 'random_Nationaal')
         if keuze_algo == 'G':
             algo = Greedy(self.stations_lijst, self.verbindingen_lijst)
             output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Data', 'outputs', 'greedy', 'break', 'Holland')
