@@ -1,0 +1,9 @@
+train,stations
+train_1,[Amsterdam Centraal]
+train_2,[Amsterdam Amstel]
+train_3,[Amsterdam Centraal]
+train_4,[Amsterdam Sloterdijk]
+train_5,[Beverwijk]
+train_6,[Delft]
+train_7,[Rotterdam Centraal]
+score,-700.0

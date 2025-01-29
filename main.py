@@ -16,13 +16,13 @@ class Main:
     def keuze_nl_of_holland(self):
         # Laat de gebruiker kiezen tussen Nederland of Holland
         while True:
-            keuze = input("Kies Nederland (N) of Holland (H): ").upper()
+            keuze = input("Kies Nationaal (N) of Holland (H): ").upper()
             if keuze == "N":
                 return keuze
             elif keuze == "H":
                 return keuze
             else:
-                print("Ongeldige keuze. Kies N voor Nederland of H voor Holland.")
+                print("Ongeldige keuze. Kies N voor Nationaal of H voor Holland.")
     
     def keuze_random_of_greedy(self):
         # Laat de gebruiker kiezen tussen Random of Greedy algoritme
