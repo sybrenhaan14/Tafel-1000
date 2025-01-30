@@ -1,34 +1,42 @@
+Gesprek geopend. 1 ongelezen bericht.
+
+Spring naar content
+Gmail gebruiken met schermlezers
+1 van 4.954
+(geen onderwerp)
+Inbox
+
+eline kruse <e.kruse@ziggo.nl>
+11:20 (2 minuten geleden)
+aan mij
+
 # RAIL NL Tafel-1000
 
 
 ## Projectopbouw
 
 - **Code**: Hieraan staan de VSCODE-bestanden met alle codes. Deze map bevat een map met alle classes die we hebben gebruikt en hier bevindt zich ook een bestand met de code van de visualisatie.
-- **Classes**: In deze map staan alle bestanden met de codes voor de verschillende classes die zijn gebruikt. We hebben gebruik gemaakt van zeven classes: stations, verbindingen, traject, netwerken, random_algo, Greedy en main. 
+- **Classes**: In deze map staan alle bestanden met de codes voor de verschillende classes die zijn gebruikt. We hebben gebruik gemaakt van zeven classes: stations, verbindingen, traject, netwerken, random_algo, Greedy en main.
+- **Visualisaties**: In deze map bevindt zich de code voor alle visualisaties die er voor dit project zijn gemaakt.
 - **Data**: In deze map bevindt zich de map output en de CSV-bestanden met de data die we gebruiken.
 - **Output**: In de map output bevindt zich de output van het random alogortime en de output van de tests
-- **Docs**: Tot slot bevindt zich in deze map de datastructuur van het project.
-- **Experiment**: 
+- **Docs**: Tot slot bevindt zich in deze map de datastructuur van het project en de visualisaties. Er zijn verschillende visualisaties gemaakt waaronder heatmaps en kaarten voor de lijnvoering en verbindingen. De visualisaties zijn zowel op Nationaal niveau als voor Holland.
 - Onderaan bevindt zich de README, deze spreekt voor zich.
 
 ## 1. Projectbeschrijving
 
-Het doel van dit project is om met behulp van algoritmes een lijnvoering te creëren met zeven trajecten in een tijdsframe van twee uur, waarin alle verbindingen worden berede en de score zo hoog mogelijk is. 
-Voordat we dit voor heel Nederland hebben gedaan, hebben we op basis van een datatset van alle verbindingen in Noord- en Zuid Holland, code en algortimes geschreven een zo effectief mogelijke lijnvoering te creëren voor Holland. Toen we dit als basis hadden is de lijnvoering daarna uitgebreid naar heel Nederland en is er CSV-bestand gebruikt met alle verbindingen in Nederland. 
+Het doel van dit project is om met behulp van algoritmes een lijnvoering te creëren met zeven trajecten in een tijdsframe van twee uur, waarin alle verbindingen worden berede en de score zo hoog mogelijk is.
+Voordat we dit voor heel Nederland hebben gedaan, hebben we op basis van een datatset van alle verbindingen in Noord- en Zuid Holland, code en algortimes geschreven een zo effectief mogelijke lijnvoering te creëren voor Holland. Toen we dit als basis hadden is de lijnvoering daarna uitgebreid naar heel Nederland en is er CSV-bestand gebruikt met alle verbindingen in Nederland.
 
 ## 2 Code
 
 ### Classes:
-- **Stations:** In de class stations wordt het CSV-bestand met de stations geladen en wordt er per station een lijst met opties samengesteld. 
-- **Verbindingen:** In de class verbindingen wordt een lijst gemaakt van alle verbindingen en een set voor alle gereden verbindingen. 
+- **Stations:** In de class stations wordt het CSV-bestand met de stations geladen en wordt er per station een lijst met opties samengesteld.
+- **Verbindingen:** In de class verbindingen wordt een lijst gemaakt van alle verbindingen en een set voor alle gereden verbindingen.
 - **Traject:** In deze class wordt gecheckt of een verbinding al is gereden en zo niet wordt de verbinding toegevoegd aan de lijst trajcet.
 - **Lijnvoering:** In deze class worden de trajecten toegevoegd aan de lijst netwerk en wordt gecheckt of alle verbindingen worden gereden. Ook wordt de score berekent op basis van de gegeven formule. Het startstation wordt random gekozen uit de set stations, hier wordt dus gebruikt gemaakt van een random algortime.
 - **Random_algo:** Voor elk station is eerder een lijst met opties samengesteld, uit deze opties wordt doormiddel van een random algoritme gekozen. De code hiervoor bevindt zich in deze class.
 - **Greedy:** In deze class wordt gebruik gemaakt van het Greedy algoritme. In de lijst met opties wordt gecontroleerd of de verbinding al is gereden en als dit niet zo is wordt het station gekozen en wordt de verbinding toegevoegd aan de lijst met gereden verbindingen.
-
-### Gebruik
-Een voorbeeld van het runnen van het is, dan krijg je een popup voor het welke regio je wil runnen en dan voor welk algoritme je wil runnen. Ook kunnen je in de code zelf aanpassen hoe vaak je het wil runnen.
-`python main.py`
 
 ### Visualisatie
 
@@ -50,18 +58,21 @@ Dit algoritme maakt de keus die op dat moment het voordeligst lijkt, zonder teru
 
 Een van de problemen waar wij tegen aan zijn gelopen had te maken met het Greedy algoritme. We laten het algoritme de beste keus maken, hierdoor kiest hij de kortste optie die niet is gereden. We laten het algoritme lopen tot 180 minuten lopen, maar met deze voorwaardes die we aan het algoritme hebben gehangen krijgen we niet een optimaal resultaat. Wanneer alle opties van bepaalde zijn gereden en  twee stations elkaars kortste opties zijn zullen ze steeds naar elkaar rijden. Hierdoor zullen er minder verbindingen worden gereden dan we willen en één bepaalde verbinding heel vaak. Hierdoor kregen we altijd een negatieve score. Met behulp van een experiment willen we erachter komen hoe we dit kunnen vermijden.
 
-De huidige code kiest de verbinding die mogelijk is vanuit dat station met de kortste tijd. Dit hebben we proberen op te lossen op twee manieren. In eerste instantie hebben we de code zo herschreven dat wanneer alle mogelijke verbindingen al zijn gereden het algoritme een random keus maakt uit de mogelijke stations. Daarna hebben we de code aangepast dat het traject stopt wanneer alle opties al zijn gereden. Beide aanpassing hebben we 10.000 keer gerund en er zijn ook met deze aanpassingen geen positieve scores gevonden. 
+De huidige code kiest de verbinding die mogelijk is vanuit dat station met de kortste tijd. Dit hebben we proberen op te lossen op twee manieren. In eerste instantie hebben we de code zo herschreven dat wanneer alle mogelijke verbindingen al zijn gereden het algoritme een random keus maakt uit de mogelijke stations. Daarna hebben we de code aangepast dat het traject stopt wanneer alle opties al zijn gereden. Beide aanpassing hebben we 10.000 keer gerund en er zijn ook met deze aanpassingen geen positieve scores gevonden.
 
-Een volgens experiment wat we hebben uitgevoerd was met een maximaal aantal herhalingen. Er is een code geschreven waarbij opties die al gereden waren tot 3 keer toe konden worden gekozen. Er werd gebruikt gemaakt van een tel variabel, die elke kee hoger werd alas een het volgende station al in de lijst stond met gereden stations. Met deze aangepaste code hebben we het algoritme opnieuw 10.000 keer laten runnen, maar nog steeds bleken alle scores negatief. 
+Een volgens experiment wat we hebben uitgevoerd was met een maximaal aantal herhalingen. Er is een code geschreven waarbij opties die al gereden waren tot 3 keer toe konden worden gekozen. Er werd gebruikt gemaakt van een tel variabel, die elke kee hoger werd alas een het volgende station al in de lijst stond met gereden stations. Met deze aangepaste code hebben we het algoritme opnieuw 10.000 keer laten runnen, maar nog steeds bleken alle scores negatief.
 
-Daarnaast kiezen we nu met behulp van een random algoritme een start station, maar we waren benieuwd of er effectievere startstations zijn. In volgend experiment hebbenn we dit gestest. De aangepaste code voor dit experiment koos een startstation die maar 1 verbinding had. Na het runnen van de aangepaste code waren opnieuw alle scores negatief. 
+Daarnaast kiezen we nu met behulp van een random algoritme een start station, maar we waren benieuwd of er effectievere startstations zijn. In volgend experiment hebbenn we dit gestest. De aangepaste code voor dit experiment koos een startstation die maar 1 verbinding had. Na het runnen van de aangepaste code waren opnieuw alle scores negatief.
 
-## 4 Resultaten 
+## 4 Resultaten
 
-Uit onze output blijk dat er bij het gebruik van een random algoritme voornamelijk hoge positieve scores komen. Zowel op het niveau van Holland als op Nationaal niveau. Het Greedy algortime geeft daarentegen op niveau van Holland met name negatieve scores en op Nationaal niveua alleen maar negatieve scores. 
+Uit onze output blijk dat er bij het gebruik van een random algoritme voornamelijk hoge positieve scores komen. Zowel op het niveau van Holland als op Nationaal niveau. Het Greedy algortime geeft daarentegen op niveau van Holland met name negatieve scores en op Nationaal niveua alleen maar negatieve scores. Om onze resultaten te vergelijken hebben we het theoretisch maximum uitgerekend. Dit is de score bij een optimaal resultaat. Het theoretisch maximum gaat er vanuit dat er geen verbindingen dubbel worden gereden. Het is onmogelijk alle verbindingen te rijden en geen enkele verbinding dubbel te rijden. Het theoretisch maximun zouden wij nooit kunnen bereiken. De score voor eht theoretisch maximum van Holland is 9232 (10.000-400-368) en op nationaal niveau 7559 (10.000-900-1541).
+
+Voor het random algortime was de hoogste score in Holland 8757 en op voor heel Nederland 3983. De score voor Holland zit in de buurt van het theoretisch maximun, voor nationaal wijkt de score af. De hoogste scorde voor het greedy algoritme is voor Holland 2781 en voor heel Nederland -2154. Beide sccores wijken aanzienlijk af van het theoretisch maximum
+
 
 ### Beperkingen
 
-Opvallend aan onze resultaten is dat met het random algoritme er overwegened veel hoge positieve scores worden gevonden en met het Greedy algoritme op enkele na alleen maar negatieve scores vindt. Zelf bij het uitvoeren van meerdere experimenten op het Greedy algoritme, blijven de scores negatief. Dit is te verklaren uit de werking van de algoritmes. Het Greedy algoritme kiest altijd de beste optie, zonder terug of vooruit te kijken. Hierdoor houdt het algoritme geen rekeneing met de gevolgen die de keus kan hebben op het gehele netwerk. Hierdoor ontstaan situaties waarin het algoritme verbindingen niet efficiënt benut. Het gebruik van het Greedy algoritme kan leiden tot trajecten die niet efficiënt zijn en daardoor een negatieve score. Een ander mogelijke oorzaak voor de lage score zijn het aantal verbindingen dat er wordt gereden tijdens het gebruik van het Greedy algoritme. Zo worden er steeds maar 42 van de 89 verbindingen gereden, hierdoor valt de score ook lager uit. 
+Opvallend aan onze resultaten is dat met het random algoritme er overwegened veel hoge positieve scores worden gevonden en met het Greedy algoritme op enkele na alleen maar negatieve scores vindt. Zelf bij het uitvoeren van meerdere experimenten op het Greedy algoritme, blijven de scores negatief. Dit is te verklaren uit de werking van de algoritmes. Het Greedy algoritme kiest altijd de beste optie, zonder terug of vooruit te kijken. Hierdoor houdt het algoritme geen rekeneing met de gevolgen die de keus kan hebben op het gehele netwerk. Hierdoor ontstaan situaties waarin het algoritme verbindingen niet efficiënt benut. Het gebruik van het Greedy algoritme kan leiden tot trajecten die niet efficiënt zijn en daardoor een negatieve score. Een ander mogelijke oorzaak voor de lage score zijn het aantal verbindingen dat er wordt gereden tijdens het gebruik van het Greedy algoritme. Zo worden er steeds maar 42 van de 89 verbindingen gereden, hierdoor valt de score ook lager uit.
 
-Het random algoritme houdt geen rekening met welke optie het best is. Ondanks dat dit algoritme geen rekening houdt met de beste opties, kiest het per toeval verbindingen die een netwerk creëren met een hogere score. 
+Het random algoritme houdt geen rekening met welke optie het best is. Ondanks dat dit algoritme geen rekening houdt met de beste opties, kiest het per toeval verbindingen die een netwerk creëren met een hogere score.
